@@ -1,9 +1,28 @@
 @import './base.css';
 
-#app {
-  max-width: 1440;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+.container{
+  max-width: 1440px !important;
 }
 
+:root {
+    --default-font: "Rethink Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Rethink Sans", sans-serif;
+    --nav-font: "Rethink Sans", sans-serif;
+    --background-color: #000;
+    --default-color: #FFF;
+    --text-color: #333333;
+    --cta-background-color: #091DFF;
+    --nav-hover-color: #ffffff;
+    --social-links-color: #000;
+    --social-links-background-color: #FF6D00;
+    --background-color-white: #ffffff;
+    --background-color-grey: #F8F9FC;
+    --background-color-dark: #101820;
+    --background-color-grey-medium: #D9D9D9;
+    --background-color-client: #F5F5F5;
+    --background-color-trust-whi: #F4F4F4;
+    --color-white: #ffffff;
+    --color-blue: #1D164E;
+    --emphasis-color: #1FAD90;
+    scroll-behavior: smooth
+}
