@@ -91,6 +91,10 @@ input::placeholder{
 }
 
 /*Header*/
+.search{
+  border: 1px solid var(--red-secundary) !important;
+  max-width: 420px;
+}
 .register{
   max-width: 130px !important;
   height: 35px;

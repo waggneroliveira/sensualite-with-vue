@@ -25,7 +25,16 @@
 
                 <div class="row gap-3">
                     <!-- Menu Direita -->
-                    <div class="navbar-nav navbar-top w-100 justify-content-end gap-4">
+                    <div class="navbar-nav navbar-top w-100 justify-content-end align-items-center gap-4">
+                        <!-- Input de pesquisa -->
+                        <div class="input-group mb-0 search rounded-5">
+                            <input type="text" class="form-control ps-4 bg-transparent border-0" placeholder="Pesquisar..." aria-label="Pesquisar" aria-describedby="button-search">
+                            <button class="btn bg-transparent border-0 pe-4" type="button" id="button-search">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.66659 0C2.08887 0 0 2.08951 0 4.66653C0 7.24421 2.08901 9.33359 4.66659 9.33359C5.6661 9.33359 6.59251 9.01902 7.35205 8.4835L10.6341 11.766C10.9466 12.078 11.4532 12.078 11.7656 11.766C12.0781 11.4536 12.0781 10.947 11.7656 10.6345L8.48359 7.35251C9.0186 6.5929 9.33317 5.66647 9.33317 4.66655C9.33317 2.08941 7.24364 0 4.66659 0ZM1.59975 4.66653C1.59975 2.97321 2.97271 1.60013 4.66659 1.60013C6.36048 1.60013 7.73344 2.97307 7.73344 4.66653C7.73344 6.36039 6.36048 7.73333 4.66659 7.73333C2.97271 7.73333 1.59975 6.36039 1.59975 4.66653Z" fill="#C0BDAD"/>
+                                </svg>
+                            </button>
+                        </div>
                         <!-- Botão com Dropdown -->
                         <div class="dropdown d-flex">
                             <button class="btn btn-dropdown clean d-flex justify-content-center align-items-center gap-2 text-white" type="button" id="dropdownCadastro" data-bs-toggle="dropdown" aria-expanded="false">
