@@ -1,12 +1,14 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
+import Stories from './components/Stories.vue'
 </script>
 
 <template>
   <div class="w-100 position-realtive">
     <div class="background-overlay"></div>
     <Header />
+    <Stories />
     <main>
       <RouterView />
     </main>

@@ -77,7 +77,9 @@ input::placeholder{
 .text-gold-gradient {
   color: #E6C27A !important;
 }
-
+.color-gold{
+  color: #E6C27A !important;
+}
 .gold-gradient{
   background: var(--gold-gradient);
 }
