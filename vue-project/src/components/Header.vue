@@ -252,7 +252,6 @@
 <script setup>
     import { RouterLink } from 'vue-router'
     import logo from '@/assets/images/logo.png'
-    // import Stories from '@/components/Stories.vue'
 </script>
 
 <style scoped>

@@ -73,8 +73,8 @@
         </div>
 
         <!-- Botões do modal (mantidos do jeito que estava) -->
-        <button class="nav-btn prev color-gold red-gradient radius-10" @click="prevItem">&#10094;&#10094;</button>
-        <button class="nav-btn next color-gold red-gradient radius-10" @click="nextItem">&#10095;&#10095;</button>
+        <button class="nav-btn prev color-gold radius-10" @click="prevItem">&#10094;&#10094;</button>
+        <button class="nav-btn next color-gold radius-10" @click="nextItem">&#10095;&#10095;</button>
         <button class="close-btn" @click="closeStory">&times;</button>
       </div>
     </div>
