@@ -2,6 +2,11 @@
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
 import Stories from './components/Stories.vue'
+import HilightBox from './components/HilightBox.vue'
+import News from './components/News.vue'
+import Category from './components/Category.vue'
+import CompanionModels from './components/CompanionModels.vue'
+
 </script>
 
 <template>
@@ -10,6 +15,10 @@ import Stories from './components/Stories.vue'
     <Header />
     <Stories />
     <main>
+      <HilightBox />
+      <News />
+      <Category />
+      <CompanionModels />
       <RouterView />
     </main>
   </div>

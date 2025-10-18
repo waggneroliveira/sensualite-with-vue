@@ -71,14 +71,29 @@ input::placeholder{
   color: var(--berge) !important;
   font-size: 0.75rem;
 }
+.text-grey-light{
+  color: var(--grey-light);
+}
 .text-red-primary{
   color: var(--red-primary);
 }
+.text-gradient {
+  background: linear-gradient(90deg, #F9E4B7, #E6C27A, #C6A14D, #8C6C3A, #F9E4B7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
 .text-gold-gradient {
   color: #E6C27A !important;
 }
 .color-gold{
   color: #E6C27A !important;
+}
+.bg-red-primary{
+  background: var(--red-primary);
 }
 .gold-gradient{
   background: var(--gold-gradient);
