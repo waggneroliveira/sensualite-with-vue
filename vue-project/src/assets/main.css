@@ -64,8 +64,12 @@
   border-color: var(--red-secundary) !important;
   height: 45px;
 }
+.navbar-expand-lg .navbar-nav .nav-link:focus, .navbar-expand-lg .navbar-nav .nav-link:hover {
+  color: var(--red-secundary) !important;
+}
 input::placeholder{
   color: var(--berge) !important;
+  font-size: 0.75rem;
 }
 .text-red-primary{
   color: var(--red-primary);
@@ -91,9 +95,12 @@ input::placeholder{
 }
 
 /*Header*/
+.login.dropdown-menu[data-bs-popper]{
+  left: -65px;
+}
 .search{
   border: 1px solid var(--red-secundary) !important;
-  max-width: 420px;
+  max-width: 452px;
 }
 .register{
   max-width: 130px !important;
