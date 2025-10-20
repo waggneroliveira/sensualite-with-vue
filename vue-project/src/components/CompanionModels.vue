@@ -3,22 +3,42 @@ import { ref } from 'vue';
 import Like from '@/components/Like.vue';
 
 const randomCompanions = ref([
-  { name: "Elisângela Felipa", image: new URL('@/assets/images/a1.jpg', import.meta.url).href, link: "/" },
-  { name: "Larissa Costa", image: new URL('@/assets/images/a2.jpg', import.meta.url).href, link: "/" },
-  { name: "Tatiane Rocha", image: new URL('@/assets/images/a4.jpg', import.meta.url).href, link: "/" },
-  { name: "Carla Menezes", image: new URL('@/assets/images/a6.jpg', import.meta.url).href, link: "/" },
-  { name: "Maria Luisa", image: new URL('@/assets/images/a7.jpg', import.meta.url).href, link: "/" },
-  { name: "Felipa dos Santos", image: new URL('@/assets/images/a8.jpg', import.meta.url).href, link: "/" },
-  { name: "Rosa Costa", image: new URL('@/assets/images/a9.jpg', import.meta.url).href, link: "/" },
-  { name: "Fabiola Rocha", image: new URL('@/assets/images/a10.jpg', import.meta.url).href, link: "/" },
-  { name: "Caroline Menezes", image: new URL('@/assets/images/a11.jpg', import.meta.url).href, link: "/" },
-  { name: "Natália Lima", image: new URL('@/assets/images/a12.jpg', import.meta.url).href, link: "/" },
+    { name: "Elisângela Felipa", image: new URL('@/assets/images/a1.jpg', import.meta.url).href, link: "/" },
+    { name: "Larissa Costa", image: new URL('@/assets/images/a2.jpg', import.meta.url).href, link: "/" },
+    { name: "Tatiane Rocha", image: new URL('@/assets/images/a4.jpg', import.meta.url).href, link: "/" },
+    { name: "Carla Menezes", image: new URL('@/assets/images/a6.jpg', import.meta.url).href, link: "/" },
+    { name: "Maria Luisa", image: new URL('@/assets/images/a7.jpg', import.meta.url).href, link: "/" },
+    { name: "Felipa dos Santos", image: new URL('@/assets/images/a8.jpg', import.meta.url).href, link: "/" },
+    { name: "Rosa Costa", image: new URL('@/assets/images/a9.jpg', import.meta.url).href, link: "/" },
+    { name: "Fabiola Rocha", image: new URL('@/assets/images/a10.jpg', import.meta.url).href, link: "/" },
+    { name: "Caroline Menezes", image: new URL('@/assets/images/a11.jpg', import.meta.url).href, link: "/" },
+    { name: "Natália Lima", image: new URL('@/assets/images/a12.jpg', import.meta.url).href, link: "/" },
+    { name: "Amanda Silva", image: new URL('@/assets/images/a1.jpg', import.meta.url).href, link: "/" },
+    { name: "Beatriz Oliveira", image: new URL('@/assets/images/a2.jpg', import.meta.url).href, link: "/" },
+    { name: "Camila Santos", image: new URL('@/assets/images/a4.jpg', import.meta.url).href, link: "/" },
+    { name: "Daniela Pereira", image: new URL('@/assets/images/a6.jpg', import.meta.url).href, link: "/" },
+    { name: "Eduarda Rodrigues", image: new URL('@/assets/images/a7.jpg', import.meta.url).href, link: "/" },
+    { name: "Fernanda Alves", image: new URL('@/assets/images/a8.jpg', import.meta.url).href, link: "/" },
+    { name: "Gabriela Lima", image: new URL('@/assets/images/a9.jpg', import.meta.url).href, link: "/" },
+    { name: "Helena Costa", image: new URL('@/assets/images/a10.jpg', import.meta.url).href, link: "/" },
+    { name: "Isabela Martins", image: new URL('@/assets/images/a11.jpg', import.meta.url).href, link: "/" },
+    { name: "Juliana Souza", image: new URL('@/assets/images/a12.jpg', import.meta.url).href, link: "/" },
+    { name: "Amanda Silva", image: new URL('@/assets/images/a1.jpg', import.meta.url).href, link: "/" },
+    { name: "Beatriz Oliveira", image: new URL('@/assets/images/a2.jpg', import.meta.url).href, link: "/" },
+    { name: "Camila Santos", image: new URL('@/assets/images/a4.jpg', import.meta.url).href, link: "/" },
+    { name: "Daniela Pereira", image: new URL('@/assets/images/a6.jpg', import.meta.url).href, link: "/" },
+    { name: "Eduarda Rodrigues", image: new URL('@/assets/images/a7.jpg', import.meta.url).href, link: "/" },
+    { name: "Fernanda Alves", image: new URL('@/assets/images/a8.jpg', import.meta.url).href, link: "/" },
+    { name: "Gabriela Lima", image: new URL('@/assets/images/a9.jpg', import.meta.url).href, link: "/" },
+    { name: "Helena Costa", image: new URL('@/assets/images/a10.jpg', import.meta.url).href, link: "/" },
+    { name: "Isabela Martins", image: new URL('@/assets/images/a11.jpg', import.meta.url).href, link: "/" },
+    { name: "Juliana Souza", image: new URL('@/assets/images/a12.jpg', import.meta.url).href, link: "/" },
 ]);
 </script>
 
 <template>
   <section class="position-relative container-fluid px-5 mt-5">
-    <h3 class="title-section mb-3 text-gradient">Destaques</h3>
+    <h3 class="title-section mb-3 text-gradient">Modelos Sensualité</h3>
 
     <div class="companion-grid">
       <div
@@ -40,9 +60,10 @@ const randomCompanions = ref([
             <div class="description border-top-0 col-12 m-auto bg-red-primary">
                 <div class="d-flex justify-content-between align-items-center col-11 m-auto pt-2 pb-1">
                     <div class="d-flex text-berge gap-2 justify-content-center align-items-center flex-row">
-                        <h4 class="m-0 font-18">{{ companion.name }}</h4>
+                        <h4 class="m-0 font-18 companion-font-mobile">{{ companion.name }}</h4>
                         <!-- ícone online -->
                         <svg
+                        class="icon-mobile"
                         width="18"
                         height="18"
                         viewBox="0 0 19 19"
@@ -62,6 +83,7 @@ const randomCompanions = ref([
                         :to="companion.link"
                     >
                         <svg
+                        class="icon-chat-mobile"
                         width="24"
                         height="22"
                         viewBox="0 0 24 22"
@@ -85,31 +107,84 @@ const randomCompanions = ref([
 </template>
 
 <style scoped>
+.companion-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 itens por linha */
+    gap: 1rem;
+}
+
+.companion-item .content-item img {
+    object-fit: cover;
+    aspect-ratio: 7/8;
+    transition: transform 0.4s ease;
+}
+
+.companion-item .content-item .image .rounded {
+    border-radius: 25px 0 0 !important;
+}
+
+.companion-item .content-item .image {
+    padding: 1px;
+}
+
+.companion-item .content-item .description {
+    border: 2px solid #C0BDAD;
+    border-radius: 0 0 25px 0;
+}
+
+.companion-item .content-item {
+    border-radius: 25px 0;
+    background-color: #C0BDAD;
+}
+
+.companion-item .content-item .image:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1400px) {
     .companion-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr); /* 5 itens por linha */
-        gap: 1rem;
+        grid-template-columns: repeat(4, 1fr);
     }
-    .companion-item .content-item img {
-        object-fit: cover;
-        aspect-ratio: 7/8;        
-        transition: transform 0.4s ease;
+}
+
+@media (max-width: 992px) {
+    .companion-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
-    .companion-item .content-item .image .rounded {
-        border-radius: 25px 0 0 !important;
+}
+
+@media (max-width: 768px) {
+    .companion-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .companion-item .content-item .image{
-        padding: 1px;
+}
+
+@media (max-width: 576px) {
+    .d-flex.justify-content-between.align-items-center.col-11.m-auto.pt-2.pb-1{
+        padding: 0 !important;
     }
-    .companion-item .content-item .description{
-        border: 2px solid #C0BDAD;
-        border-radius: 0 0 25px 0;
+    .d-flex.text-berge.gap-2.justify-content-center.align-items-center.flex-row{
+        gap: 4px !important
     }
-    .companion-item .content-item{
-        border-radius: 25px 0;
-        background-color: #C0BDAD;
+    .icon-chat-mobile{
+        width: 18px;
     }
-    .companion-item .content-item .image:hover img {
-        transform: scale(1.05);
+    .icon-mobile{
+        width: 12px;
+        height: 12px;
     }
+    .companion-font-mobile{
+        font-size: 0.875rem;
+    }
+    .companion-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    section.container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
 </style>

@@ -1,7 +1,7 @@
 @import './base.css';
 
 .container{
-  max-width: 1440px !important;
+  max-width: 90% !important;
 }
 
 :root {
@@ -117,7 +117,6 @@ input::placeholder{
 }
 .search{
   border: 1px solid var(--red-secundary) !important;
-  max-width: 452px;
 }
 .register{
   max-width: 130px !important;

@@ -1,5 +1,5 @@
 <template>
-  <div class="my-swiper-container px-5 mt-3">
+  <section class="my-swiper-container px-5 mt-3">
     <!-- Carrossel principal (sem nav e sem dots) -->
     <Swiper
       :modules="[Autoplay]"
@@ -9,6 +9,13 @@
       :looped-slides="15" 
       class="stories-swiper"
       :autoplay="{ delay: 4000, disableOnInteraction: false }"
+      :breakpoints="{
+        0: { slidesPerView: 5, spaceBetween: 8 },
+        576: { slidesPerView: 8, spaceBetween: 10 },
+        768: { slidesPerView: 10, spaceBetween: 12 },
+        992: { slidesPerView: 12, spaceBetween: 14 },
+        1200: { slidesPerView: 15, spaceBetween: 15 }
+      }"
     >
       <SwiperSlide
         v-for="(story, index) in stories"
@@ -78,7 +85,7 @@
         <button class="close-btn" @click="closeStory">&times;</button>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -378,5 +385,11 @@ onBeforeUnmount(() => stopProgress())
 }
 .close-btn:hover {
   color: #e6c27a;
+}
+@media (max-width: 576px) {
+  section.my-swiper-container.px-5.mt-3{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
 }
 </style>

@@ -6,6 +6,7 @@ import HilightBox from './components/HilightBox.vue'
 import News from './components/News.vue'
 import Category from './components/Category.vue'
 import CompanionModels from './components/CompanionModels.vue'
+import AnnouncementHorizontal from './components/AnnouncementHorizontal.vue'
 
 </script>
 
@@ -18,6 +19,7 @@ import CompanionModels from './components/CompanionModels.vue'
       <HilightBox />
       <News />
       <Category />
+      <AnnouncementHorizontal />
       <CompanionModels />
       <RouterView />
     </main>

@@ -10,7 +10,7 @@
       >
         <div class="content-category-item rounded h-100 overflow-hidden">
           <RouterLink :to="category.link" class="d-flex align-items-center justify-content-center gap-3 text-decoration-none p-0 shadow-sm h-100 rounded hover-scale">
-            <span class="category-title text-dark fw-bold font-20">{{ category.title }}</span>
+            <span class="category-title text-dark fw-bold font-20 font-mobile">{{ category.title }}</span>
             <div class="category-image">
               <img :src="category.image" :alt="category.title" class="img-fluid rounded" />
             </div>
@@ -78,5 +78,46 @@ const categories = ref([
 
 .content-category-item {
   background: #C0BDAD;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1400px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .category-item .category-image img{
+    width: 68px;
+    height: auto;
+  }
+  .category-item{
+    height: 85px;
+  }
+  .font-mobile{
+    font-size: 0.75rem;
+  }
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  section.container-fluid {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
 }
 </style>

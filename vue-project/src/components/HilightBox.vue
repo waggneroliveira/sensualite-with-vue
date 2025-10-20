@@ -22,9 +22,10 @@
             <div class="description col-12 m-auto gold-gradient">
                 <div class="d-flex justify-content-between align-items-center col-11 m-auto py-2">
                     <div class="d-flex gap-2 justify-content-center align-items-center flex-row">
-                        <h4 class="m-0 font-18">{{ companion.name }}</h4>
+                        <h4 class="m-0 font-18 companion-font-mobile">{{ companion.name }}</h4>
                         <!-- ícone online -->
                         <svg
+                        class="icon-mobile"
                         width="18"
                         height="18"
                         viewBox="0 0 19 19"
@@ -44,6 +45,7 @@
                         :to="companion.link"
                     >
                         <svg
+                        class="icon-chat-mobile"
                         width="24"
                         height="22"
                         viewBox="0 0 24 22"
@@ -104,4 +106,21 @@ const randomCompanions = ref([
         width: 100%;
         height: 100%;
     } */
+
+     @media (max-width: 576px) {
+        .icon-chat-mobile{
+            width: 18px;
+        }
+        .icon-mobile{
+            width: 12px;
+            height: 12px;
+        }
+        .companion-font-mobile{
+            font-size: 0.875rem;
+        }
+        section.container-fluid {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    }
 </style>
