@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark ">
-        <div class="my-swiper-container px-5">
+        <div class="container-fluid px-5">
             <div class="w-100 d-flex flex-wrap justify-content-between align-items-center">
                 <!-- Logo -->
                 <div class="image-logo col-1 col-lg-2">
@@ -471,7 +471,7 @@
         justify-content: end;
         padding-right: 14px;
     }
-    .navbar-nav.me-0.col-11.gap-3, .row.dir-mobile{
+    .navbar-nav.me-0.col-11.gap-3{
         width: 70%;
     }
     .announcement{
@@ -550,6 +550,10 @@
     }
 }
 @media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
     .max-width{
         max-width: 100%;
     }

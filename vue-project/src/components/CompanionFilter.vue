@@ -1,40 +1,40 @@
 <template>
-  <section class="my-swiper-container py-3 px-5 position-relative">
+  <section class="container-fluid mt-5 px-5 position-relative">
     <div class="d-flex flex-wrap flex-row gap-2 col-12 justify-content-between">
-        <div class="col-10 p-3 rounded-4 border border-danger d-flex flex-column gap-3 bg-black text-light" style="border-color:#640000!important;">
+        <div class="col-12 col-lg-10 p-3 rounded-4 border border-danger d-flex flex-column gap-3 bg-black text-light" style="border-color:#640000!important;">
             <!-- Linha 1 -->
             <div class="row align-items-center justify-content-start g-2">                
                 <div class="row g-2">
                     <label class="font-18 text-berge col-12 col-lg-1">Filtro:</label>
-                    <div class="col-6 col-lg-1">
+                    <div class="col-12 col-lg-1">
                         <select v-model="filters.uf" class="form-select-sm filter-select w-100">
                         <option value="">UF</option>
                         <option v-for="uf in ufs" :key="uf" :value="uf">{{ uf }}</option>
                         </select>
                     </div>
 
-                    <div class="col-6 col-lg-3">
+                    <div class="col-12 col-lg-3">
                         <select v-model="filters.cidade" class="form-select-sm filter-select w-100">
                         <option value="">Cidade</option>
                         <option v-for="cidade in cidades" :key="cidade" :value="cidade">{{ cidade }}</option>
                         </select>
                     </div>
 
-                    <div class="col-6 col-lg-3">
+                    <div class="col-12 col-lg-3">
                         <select v-model="filters.bairro" class="form-select-sm filter-select w-100">
                         <option value="">Bairro</option>
                         <option v-for="bairro in bairros" :key="bairro" :value="bairro">{{ bairro }}</option>
                         </select>
                     </div>
 
-                    <div class="col-6 col-lg-2">
+                    <div class="col-12 col-lg-2">
                         <select v-model="filters.tipo" class="form-select-sm filter-select w-100">
                         <option value="">Tipo de modelo</option>
                         <option v-for="tipo in tipos" :key="tipo" :value="tipo">{{ tipo }}</option>
                         </select>
                     </div>
 
-                    <div class="col-6 col-lg-2">
+                    <div class="col-12 col-lg-2">
                         <select v-model="filters.acompanhante" class="form-select-sm filter-select w-100">
                         <option value="">Acompanha</option>
                         <option v-for="a in acompanhantes" :key="a" :value="a">{{ a }}</option>
@@ -47,42 +47,27 @@
             <div class="row align-items-center justify-content-start g-2">
                 <label class="font-18 text-berge col-12 col-lg-1">Altura:</label>
 
-                <div class="d-flex gap-2 col-12 col-lg-10">
-                    <select v-model="filters.alturaMin" class="col-12 col-lg-1 form-select-sm filter-select">
-                        <option value="">Min</option>
-                        <option v-for="n in alturas" :key="'min-' + n" :value="n">{{ n }}</option>
-                    </select>
-
-                    <select v-model="filters.alturaMax" class="col-12 col-lg-1 form-select-sm filter-select">
-                        <option value="">Max</option>
-                        <option v-for="n in alturas" :key="'max-' + n" :value="n">{{ n }}</option>
-                    </select>
-
-                    <div class="position-relative d-inline-block rounded border col-12 col-lg-4" style="border-color:#640000!important;height: 35px;">
-                        <input
-                            type="text"
-                            class="form-control ps-4 pe-5 bg-transparent border-0 h-100"
-                            placeholder="Pesquisar..."
-                            aria-label="Pesquisar"
-                        >
-                            <button
-                                type="button"
-                                class="btn position-absolute top-50 end-0 translate-middle-y bg-transparent border-0 pe-3"
-                                id="button-search"
-                                @click="emitFilter"
-                            >
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.66659 0C2.08887 0 0 2.08951 0 4.66653C0 7.24421 2.08901 9.33359 4.66659 9.33359C5.6661 9.33359 6.59251 9.01902 7.35205 8.4835L10.6341 11.766C10.9466 12.078 11.4532 12.078 11.7656 11.766C12.0781 11.4536 12.0781 10.947 11.7656 10.6345L8.48359 7.35251C9.0186 6.5929 9.33317 5.66647 9.33317 4.66655C9.33317 2.08941 7.24364 0 4.66659 0ZM1.59975 4.66653C1.59975 2.97321 2.97271 1.60013 4.66659 1.60013C6.36048 1.60013 7.73344 2.97307 7.73344 4.66653C7.73344 6.36039 6.36048 7.73333 4.66659 7.73333C2.97271 7.73333 1.59975 6.36039 1.59975 4.66653Z" fill="#C0BDAD"/>
-                                </svg>
-                            </button>
+                <div class="col-12 col-lg-10">
+                    <div class="row g-2">
+                        <div class="col-12 col-lg-1">
+                            <select v-model="filters.alturaMin" class="form-select form-select-sm filter-select">
+                                <option value="">Min</option>
+                                <option v-for="n in alturas" :key="'min-' + n" :value="n">{{ n }}</option>
+                            </select>
                         </div>
-
-                    
+                        <div class="col-12 col-lg-1">
+                            <select v-model="filters.alturaMax" class="form-select form-select-sm filter-select">
+                                <option value="">Max</option>
+                                <option v-for="n in alturas" :key="'max-' + n" :value="n">{{ n }}</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
-        <svg width="131" height="143" viewBox="0 0 131 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="d-none d-md-block" width="131" height="143" viewBox="0 0 131 143" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M57.3103 37.4348C56.6752 37.7423 56.0163 37.8868 55.3665 38.1419C54.7318 38.3905 54.0892 38.6284 53.4637 38.9005C52.2599 39.4428 51.0853 40.0492 49.9447 40.7171C47.6249 41.9953 45.4468 43.521 43.4475 45.2682C39.5638 49.1302 36.6831 53.9042 35.0618 59.1656C32.9971 64.7715 31.2291 70.4848 29.7653 76.2812C28.1606 82.2346 27.1486 88.3355 26.7441 94.4929C26.4919 97.4912 26.639 100.51 27.1814 103.469C27.4162 104.736 27.8483 105.956 28.4614 107.086C29.0806 108.131 29.9696 108.985 31.0327 109.556C31.4348 109.782 31.9054 109.222 31.5397 108.891C30.0554 107.37 29.1905 105.339 29.1169 103.202C29.0252 100.657 29.1379 98.1085 29.4537 95.5821C29.9861 89.8428 30.9371 84.1513 32.2988 78.554C33.6574 72.9058 35.31 67.3142 37.045 61.7729C38.3338 56.7445 40.5968 52.0257 43.7026 47.8906C45.5855 45.7267 47.7655 43.8476 50.1759 42.311C51.3385 41.5374 52.5596 40.8409 53.7657 40.1413C55.0376 39.4042 56.1995 38.4243 57.5037 37.7686C57.7254 37.6586 57.5313 37.3279 57.3103 37.4348Z" fill="#A20712" fill-opacity="0.4"/>
         <path d="M79.3198 21.1922C77.3026 23.2684 75.8336 25.825 75.048 28.6267C74.7803 29.5031 74.6203 30.4065 74.3911 31.2881C73.5078 33.9301 69.524 37.9285 66.776 37.0969C64.2631 36.2678 61.8673 35.1116 59.6488 33.6574C57.0949 32.1821 62.4486 36.8173 63.7109 37.4283C64.4005 37.7617 67.9869 39.6955 69.6728 39.1125C71.0428 38.4234 72.27 37.4755 73.2885 36.3198C73.2351 37.2165 73.1032 38.1067 72.8945 38.9798C72.0524 42.71 71.26 46.427 70.5721 50.1852C69.8625 53.6881 69.3775 57.2339 69.1201 60.8003C69.0779 62.6816 69.1875 64.5632 69.448 66.4264C68.7265 66.0905 67.9721 65.8325 67.1972 65.6565C66.3006 65.471 65.3792 65.4423 64.473 65.5717C63.5501 65.7078 62.6345 65.8909 61.7297 66.1202C61.0029 66.3065 60.2877 66.5367 59.5882 66.8098C58.8216 67.1327 58.1068 67.5694 57.4674 68.1055C56.1701 69.1597 54.9391 70.2948 53.7815 71.5043C52.5288 72.7897 51.3557 74.1402 50.0865 75.4062C49.1702 76.3206 48.2034 77.1798 47.2469 78.0493C48.6082 75.1767 49.66 72.164 50.3841 69.0633C50.6134 67.9746 50.7852 66.8743 50.899 65.7672C50.9676 65.1888 50.9975 64.6064 50.9886 64.024C50.9987 63.7523 50.9932 63.4803 50.9722 63.2092L50.8292 62.2652L50.7702 62.1222L50.6345 62.0506L50.4849 62.0836L50.3909 62.2059L49.9915 63.0741C49.8553 63.3685 49.7583 63.6913 49.6462 63.996C49.4331 64.5749 49.2744 65.1683 49.0775 65.7517C48.6733 66.9491 48.2943 68.1534 47.8469 69.335C46.9956 71.5829 46.054 73.7889 45.0062 75.9499C44.4563 77.0843 43.8389 78.1827 43.2263 79.2798C42.6512 80.3104 42.1091 81.3595 41.5309 82.3829C41.1086 83.1303 40.654 83.8402 40.1868 84.555C39.389 85.5238 38.5809 86.4644 37.8372 87.4822C36.6097 89.1008 35.519 90.8213 34.5767 92.6253C33.6772 94.3435 33.0805 96.2074 32.8131 98.1331C32.7675 98.4983 33.25 98.5124 33.3664 98.209C33.9204 96.5429 34.5896 94.9184 35.3691 93.3476C36.2143 91.9027 37.1943 90.5431 38.2955 89.2874C38.5161 89.0187 38.7568 88.7675 39.0154 88.5362C39.4581 88.1483 39.9406 87.8018 40.3649 87.3984C40.653 87.125 40.9176 86.7992 41.1896 86.5295C41.4617 86.2599 41.7433 86.0524 42.0233 85.8131C43.4374 84.6039 44.8305 83.3872 46.2423 82.1767C49.0416 79.862 51.6682 77.3414 54.101 74.6353C55.1103 73.4727 56.0164 72.2284 57.0502 71.084C57.5433 70.5151 58.0759 69.9826 58.6439 69.4905C59.2289 69.0029 59.8095 68.5409 60.4565 68.1C61.1449 67.5453 61.9883 67.2242 62.8671 67.1822C63.8879 67.1719 64.8998 67.3764 65.8385 67.7828C67.6984 68.5203 70.061 70.2548 71.8184 71.0765C72.633 71.4557 72.6357 71.0765 72.7794 70.6765C73.3464 69.0991 72.5546 67.6624 72.3115 66.1888C72.0556 64.6728 71.9416 63.1358 71.971 61.5981C72.1058 58.315 72.4308 55.0428 72.9445 51.7984C73.9212 44.7235 75.0074 37.7006 76.2766 30.683C76.5609 29.1108 76.9127 27.5751 77.3533 26.0215C77.816 24.3841 78.5729 22.8471 79.5861 21.4877C79.7445 21.2722 79.5116 20.9967 79.3198 21.1922Z" fill="#A20712" fill-opacity="0.4"/>
         <path d="M92.0672 43.5116C91.1518 42.3514 89.9969 41.4079 88.6834 40.7472C87.3288 40.0621 85.8322 39.7359 84.4344 39.187C84.086 39.0491 83.835 39.6449 84.1783 39.8025C85.2761 40.3277 86.3167 40.9675 87.2832 41.7115C88.2691 42.3762 89.1624 43.1718 89.9393 44.0771C90.706 44.9984 91.1873 46.1283 91.3228 47.3253C91.3866 48.782 91.129 50.2349 90.5686 51.5781C89.4722 54.3443 88.0918 56.9863 86.4503 59.4605C84.9876 61.8726 83.2379 64.0937 81.2402 66.0737C79.0609 68.1542 76.4467 69.7212 74.237 71.7519C74.1882 71.8041 74.1553 71.8695 74.1424 71.9402C74.1294 72.0108 74.137 72.0838 74.1642 72.1502C74.1913 72.2166 74.2369 72.2737 74.2954 72.3144C74.3539 72.3551 74.4228 72.3778 74.4938 72.3798C76.0148 72.3643 77.5173 72.0406 78.9128 71.4278C80.3082 70.8149 81.5683 69.9252 82.6187 68.8113C84.9994 66.6585 87.0377 64.1465 88.6616 61.364C90.3512 58.5567 91.7457 55.5779 92.8222 52.4763C93.442 51.0362 93.6976 49.4624 93.5658 47.8972C93.4339 46.332 92.9189 44.8247 92.0672 43.5116Z" fill="#A20712" fill-opacity="0.4"/>
@@ -170,6 +155,12 @@ const emitFilter = () => {
 
 .rounded-4 {
   border-radius: 1rem !important;
+}
+@media (max-width: 576px) {
+    section.container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
 }
 </style>
 

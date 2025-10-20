@@ -1,6 +1,7 @@
 <script setup>
   import CompanionModels from '../components/CompanionModels.vue'
   import FilterBox from '../components/CompanionFilter.vue'
+  import AnnouncementHorizontal from '../components/AnnouncementHorizontal.vue'
 
 const aplicarFiltro = (filtros) => {
   console.log('Filtros aplicados:', filtros)
@@ -9,8 +10,10 @@ const aplicarFiltro = (filtros) => {
 </script>
 
 <template>
+
   <FilterBox @filter="aplicarFiltro" />
 
   <CompanionModels />
 
+  <AnnouncementHorizontal />
 </template>
