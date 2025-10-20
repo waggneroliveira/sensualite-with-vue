@@ -364,6 +364,13 @@
     }
 }
 @media (max-width: 1172px) {
+    .d-flex.justify-align-content-between.align-items-center.col-12{
+        justify-content: end;
+        padding-right: 14px;
+    }
+    .navbar-nav.me-0.col-11.gap-3{
+        width: 70%;
+    }
     .announcement{
         width: auto;
     }
