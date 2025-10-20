@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <div class="description col-12 m-auto gold-gradient">
+            <div class="description col-12 m-auto">
                 <div class="d-flex justify-content-between align-items-center col-11 m-auto py-2">
                     <div class="d-flex gap-2 justify-content-center align-items-center flex-row">
                         <h4 class="m-0 font-18 companion-font-mobile">{{ companion.name }}</h4>
@@ -82,6 +82,9 @@ const randomCompanions = ref([
 </script>
 
 <style scoped>
+    .description{
+        background: linear-gradient(to bottom, #F9E4B7, #E6C27A, #8C6C3A);
+    }
     .companion-item .content-item img {
         object-fit: cover;
         aspect-ratio: 3/4;        

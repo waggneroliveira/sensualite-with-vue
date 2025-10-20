@@ -1,27 +1,14 @@
 <script setup>
-import { RouterView } from 'vue-router'
-import Header from './components/Header.vue'
-// import Stories from './components/Stories.vue'
-// import HilightBox from './components/HilightBox.vue'
-// import News from './components/News.vue'
-// import Category from './components/Category.vue'
-// import CompanionModels from './components/CompanionModels.vue'
-// import AnnouncementHorizontal from './components/AnnouncementHorizontal.vue'
-
+    import { RouterView } from 'vue-router'
+    import CompanionModels from './components/CompanionModels.vue'
 </script>
 
 <template>
   <div class="w-100 position-realtive">
     <div class="background-overlay"></div>
     <Header />
-    <!-- <Stories /> -->
-    <main>
-      <!-- <HilightBox />
-      <News />
-      <Category />
-      <AnnouncementHorizontal />
-      <CompanionModels /> -->
-      <RouterView />
+    <main>        
+        <CompanionModels />
     </main>
   </div>
 </template>
