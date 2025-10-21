@@ -38,7 +38,7 @@ const randomCompanions = ref([
 
 <template>
   <section class="position-relative container-fluid px-5 mt-5">
-    <h3 class="title-section mb-3 text-gradient">Modelos Sensualité</h3>
+    <h3 class="title-section mb-3 inter font-medium font-25 text-gradient">Modelos Sensualité</h3>
 
     <div class="companion-grid">
       <div
@@ -60,7 +60,7 @@ const randomCompanions = ref([
             <div class="description border-top-0 col-12 m-auto bg-red-primary">
                 <div class="d-flex justify-content-between align-items-center col-11 m-auto pt-2 pb-1">
                     <div class="d-flex text-berge gap-2 justify-content-center align-items-center flex-row">
-                        <h4 class="m-0 font-18 companion-font-mobile">{{ companion.name }}</h4>
+                        <h4 class="m-0 font-18 inter font-regular companion-font-mobile">{{ companion.name }}</h4>
                         <!-- ícone online -->
                         <svg
                         class="icon-mobile"

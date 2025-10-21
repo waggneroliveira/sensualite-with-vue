@@ -14,10 +14,11 @@ const router = createRouter({
       path: '/acompanhantes',
       name: 'acompanhantes',
       component: () => import('../views/AllCompanionView.vue')
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      // component: () => import('../views/AllCompanionView.vue'),
+    },
+    {
+      path: '/acompanhante/interna',
+      name: 'acompanhante/interna',
+      component: () => import('../views/CompanionInnerView.vue')
     },
   ],
 })

@@ -5,39 +5,39 @@
             <!-- Linha 1 -->
             <div class="row align-items-center justify-content-start g-2">                
                 <div class="row g-2">
-                    <label class="font-18 text-berge col-12 col-lg-1">Filtro:</label>
+                    <label class="font-18 inter font-medium text-berge col-12 col-lg-1">Filtro:</label>
                     <div class="col-12 col-lg-1">
-                        <select v-model="filters.uf" class="form-select-sm filter-select w-100">
-                        <option value="">UF</option>
-                        <option v-for="uf in ufs" :key="uf" :value="uf">{{ uf }}</option>
+                        <select v-model="filters.uf" class="form-select-sm filter-select w-100 inter font-medium font-15">
+                          <option class="inter font-medium font-15" value="">UF</option>
+                          <option class="inter font-medium font-15" v-for="uf in ufs" :key="uf" :value="uf">{{ uf }}</option>
                         </select>
                     </div>
 
                     <div class="col-12 col-lg-3">
-                        <select v-model="filters.cidade" class="form-select-sm filter-select w-100">
-                        <option value="">Cidade</option>
-                        <option v-for="cidade in cidades" :key="cidade" :value="cidade">{{ cidade }}</option>
+                        <select v-model="filters.cidade" class="form-select-sm filter-select w-100 inter font-medium font-15">
+                        <option class="inter font-medium font-15" value="">Cidade</option>
+                        <option class="inter font-medium font-15" v-for="cidade in cidades" :key="cidade" :value="cidade">{{ cidade }}</option>
                         </select>
                     </div>
 
                     <div class="col-12 col-lg-3">
-                        <select v-model="filters.bairro" class="form-select-sm filter-select w-100">
-                        <option value="">Bairro</option>
-                        <option v-for="bairro in bairros" :key="bairro" :value="bairro">{{ bairro }}</option>
+                        <select v-model="filters.bairro" class="form-select-sm filter-select w-100 inter font-medium font-15">
+                        <option class="inter font-medium font-15" value="">Bairro</option>
+                        <option class="inter font-medium font-15" v-for="bairro in bairros" :key="bairro" :value="bairro">{{ bairro }}</option>
                         </select>
                     </div>
 
                     <div class="col-12 col-lg-2">
-                        <select v-model="filters.tipo" class="form-select-sm filter-select w-100">
-                        <option value="">Tipo de modelo</option>
-                        <option v-for="tipo in tipos" :key="tipo" :value="tipo">{{ tipo }}</option>
+                        <select v-model="filters.tipo" class="form-select-sm filter-select w-100 inter font-medium font-15">
+                        <option class="inter font-medium font-15" value="">Tipo de modelo</option>
+                        <option class="inter font-medium font-15" v-for="tipo in tipos" :key="tipo" :value="tipo">{{ tipo }}</option>
                         </select>
                     </div>
 
                     <div class="col-12 col-lg-2">
-                        <select v-model="filters.acompanhante" class="form-select-sm filter-select w-100">
-                        <option value="">Acompanha</option>
-                        <option v-for="a in acompanhantes" :key="a" :value="a">{{ a }}</option>
+                        <select v-model="filters.acompanhante" class="form-select-sm filter-select w-100 inter font-medium font-15">
+                        <option class="inter font-medium font-15" value="">Acompanha</option>
+                        <option class="inter font-medium font-15" v-for="a in acompanhantes" :key="a" :value="a">{{ a }}</option>
                         </select>
                     </div>
                 </div>                
@@ -45,20 +45,20 @@
 
             <!-- Linha 2 -->
             <div class="row align-items-center justify-content-start g-2">
-                <label class="font-18 text-berge col-12 col-lg-1">Altura:</label>
+                <label class="font-18 inter font-medium text-berge col-12 col-lg-1">Altura:</label>
 
                 <div class="col-12 col-lg-10">
                     <div class="row g-2">
-                        <div class="col-12 col-lg-1">
-                            <select v-model="filters.alturaMin" class="form-select form-select-sm filter-select">
-                                <option value="">Min</option>
-                                <option v-for="n in alturas" :key="'min-' + n" :value="n">{{ n }}</option>
+                        <div class="col-12 col-lg-2">
+                            <select v-model="filters.alturaMin" class="form-select form-select-sm filter-select inter font-medium font-15">
+                                <option class="inter font-medium font-15" value="">Min</option>
+                                <option class="inter font-medium font-15" v-for="n in alturas" :key="'min-' + n" :value="n">{{ n }}</option>
                             </select>
                         </div>
-                        <div class="col-12 col-lg-1">
-                            <select v-model="filters.alturaMax" class="form-select form-select-sm filter-select">
-                                <option value="">Max</option>
-                                <option v-for="n in alturas" :key="'max-' + n" :value="n">{{ n }}</option>
+                        <div class="col-12 col-lg-2">
+                            <select v-model="filters.alturaMax" class="form-select form-select-sm filter-select inter font-medium font-15">
+                                <option class="inter font-medium font-15" value="">Max</option>
+                                <option class="inter font-medium font-15" v-for="n in alturas" :key="'max-' + n" :value="n">{{ n }}</option>
                             </select>
                         </div>
                     </div>

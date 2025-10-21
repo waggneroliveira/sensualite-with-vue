@@ -11,7 +11,7 @@
       <path d="M10.4284 0.993164L7.94534 2.97963L5.95888 0.993164H3.97241L1.48933 1.48978L0.496094 3.47625L0.99271 6.45595L3.97241 10.9255L7.94534 13.4086L8.93858 12.912L12.9115 9.43565L14.898 6.95256V2.97963L12.9115 0.993164H10.4284Z" fill="#A20712"/>
     </svg>
 
-    <span class="text-gray-800 font-medium text-berge like-font-mobile">{{ likes }} curtidas</span>
+    <span class="text-berge like-font-mobile font-12 inter font-light">{{ likes }} curtidas</span>
   </div>
 </template>
 
@@ -36,6 +36,8 @@ function toggleLike() {
 
 <style scoped>
 .like-component svg {
+  width: 16px;
+  height: 14px;
   transition: transform 0.2s ease, fill 0.2s ease;
 }
 

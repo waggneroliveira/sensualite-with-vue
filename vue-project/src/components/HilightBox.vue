@@ -1,6 +1,6 @@
 <template>
   <section class="position-relative container-fluid px-5 mt-5">
-    <h3 class="title-section mb-3 text-gradient">Destaques</h3>
+    <h3 class="title-section mb-3 text-gradient inter font-medium font-25">Destaques</h3>
 
     <div class="row g-2 justify-content-start p-0">
       <div
@@ -22,7 +22,7 @@
             <div class="description col-12 m-auto">
                 <div class="d-flex justify-content-between align-items-center col-11 m-auto py-2">
                     <div class="d-flex gap-2 justify-content-center align-items-center flex-row">
-                        <h4 class="m-0 font-18 companion-font-mobile">{{ companion.name }}</h4>
+                        <h4 class="m-0 font-18 inter font-regular companion-font-mobile">{{ companion.name }}</h4>
                         <!-- ícone online -->
                         <svg
                         class="icon-mobile"

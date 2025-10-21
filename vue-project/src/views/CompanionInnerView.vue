@@ -1,17 +1,15 @@
-<script setup>
-  import { RouterView } from 'vue-router'
-  import Header from './components/Header.vue'
-</script>
-
 <template>
-  <div class="w-100 position-realtive">
-    <div class="background-overlay"></div>
-    <Header />
-    <main>
-      <RouterView />
-    </main>
+  <div class="position-relative">
+    <BannerInnerCompanion />
+    <CompanionInner />
   </div>
 </template>
+
+<script setup>
+  import CompanionInner from '@/components/CompanionInner.vue'
+  import BannerInnerCompanion from '../components/BannerInnerCompanion.vue'
+</script>
+
 
 <style>
   /* Estilos globais */

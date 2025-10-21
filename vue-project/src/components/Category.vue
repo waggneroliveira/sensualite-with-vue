@@ -1,6 +1,6 @@
 <template>
   <section class="position-relative container-fluid px-5 mt-5">
-    <h3 class="title-section mb-3 text-gradient">Categorias</h3>
+    <!-- <h3 class="title-section inter font-medium font-25 mb-3 text-gradient">Categorias</h3> -->
 
     <div class="categories-grid">
       <div
@@ -10,7 +10,7 @@
       >
         <div class="content-category-item rounded h-100 overflow-hidden">
           <RouterLink :to="category.link" class="d-flex align-items-center justify-content-center gap-3 text-decoration-none p-0 shadow-sm h-100 rounded hover-scale">
-            <span class="category-title text-dark fw-bold font-20 font-mobile">{{ category.title }}</span>
+            <span class="category-title text-red-primary inter font-regular font-20 font-mobile">{{ category.title }}</span>
             <div class="category-image">
               <img :src="category.image" :alt="category.title" class="img-fluid rounded" />
             </div>

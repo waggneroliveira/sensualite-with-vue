@@ -5,12 +5,13 @@
 }
 
 :root {
-    --default-font: "Rethink Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --heading-font: "Rethink Sans", sans-serif;
-    --nav-font: "Rethink Sans", sans-serif;
+    --default-font: "Inter", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Inter", sans-serif;
+    --nav-font: "Inter", sans-serif;
     --red-primary: #390B0F;
     --red-secundary: #A20712;
     --grey-light: #C0BDAD;
+    --grey-text: #D9D9D9;
     --rose: #9E5F4D;
     --berge: #C0BDAD;
     --black: #000;
@@ -24,7 +25,7 @@
 .font-12 { font-size: 0.75rem; } /* 12px */
 .font-13 { font-size: 0.8125rem; } /* 13px */
 .font-14 { font-size: 0.875rem; } /* 14px */
-.font-15 { font-size: 0.9375rem; } /* 15px */
+.font-15 { font-size: 0.9375rem !important; } /* 15px */
 .font-16 { font-size: 1rem; } /* 16px */
 .font-17 { font-size: 1.0625rem; } /* 17px */
 .font-18 { font-size: 1.125rem; } /* 18px */
@@ -60,6 +61,42 @@
 .font-48 { font-size: 3rem; }      /* 48 / 16 */
 .font-49 { font-size: 3.0625rem; } /* 49 / 16 */
 .font-50 { font-size: 3.125rem; }  /* 50 / 16 */
+
+.inter {
+  font-family: "Inter", sans-serif !important;
+  font-optical-sizing: auto !important;
+}
+
+.font-thin {
+    font-variation-settings: "wght" 100;
+    transition: font-variation-settings 0.3s ease;
+}
+
+.font-extra-light {
+    font-variation-settings: "wght" 200;
+    transition: font-variation-settings 0.3s ease;
+}
+
+.font-light {
+    font-weight: 300 !important;
+}
+
+.font-regular {
+    font-weight: 400 !important;
+}
+
+.font-medium {
+    font-weight: 500 !important;
+}
+
+.font-semibold {
+    font-weight: 600 !important;
+}
+
+.font-bold {
+    font-weight: 700 !important;
+}
+
 .form-control{
   border-color: var(--red-secundary) !important;
   height: 45px;
@@ -70,6 +107,9 @@
 input::placeholder{
   color: var(--berge) !important;
   font-size: 0.75rem;
+}
+.text-grey-one{
+  color: var(--grey-text);
 }
 .text-grey-light{
   color: var(--grey-light);
@@ -91,6 +131,9 @@ input::placeholder{
 }
 .color-gold{
   color: #E6C27A !important;
+}
+.text-red-primary{
+  color: var(--red-primary);
 }
 .bg-red-primary{
   background: var(--red-primary);
