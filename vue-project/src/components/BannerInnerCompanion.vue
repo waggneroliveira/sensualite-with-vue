@@ -16,7 +16,7 @@
     </div>
 
     <div class="info-profile col-7 m-auto mt-4">
-        <div class="d-flex col-11 gap-2 m-auto flex-wrap ps-4 me-0 justify-content-start align-items-center flex-row">
+        <div class="d-flex col-10 gap-2 m-auto flex-wrap ps-4 me-0 justify-content-start align-items-center flex-row">
             <div class="description d-flex justify-content-center align-items-center gap-3">
                 <h4 class="m-0 font-25 companion-font-mobile text-berge inter font-bold">Jade Miller</h4>
                 <!-- ícone online -->
@@ -38,9 +38,9 @@
 
             <div class="d-flex justify-content-center align-items-center gap-3 social-link ms-4">
                 <form action="">
-                    <button type="button" class="gold-gradient rounded-5 px-5 follow font-18 inter font-regular">Seguindo</button>
+                    <button type="button" class="gold-gradient rounded-5 px-4 follow font-16 inter font-regular">Seguindo</button>
                 </form>
-                <RouterLink to="/" class="inter font-regular d-flex justify-content-center align-items-center text-berge rounded-5 px-5 speak font-18 text-decoration-none">
+                <RouterLink to="/" class="inter font-regular d-flex justify-content-center align-items-center text-berge rounded-5 px-4 speak font-16 text-decoration-none">
                     Conversar
                 </RouterLink>
             </div>
@@ -90,7 +90,7 @@
         margin: 0 !important;
     }
     .follow, .speak{
-        height: 40px;
+        height: 38px;
     }
     .speak{
         border: 1px solid #D9D9D9;
@@ -103,7 +103,7 @@
     }
     .w-100.px-5{
         bottom: 150px;
-        left: 0;
+        left: 115px;
     }
     .image-profile{
         border-radius: 100%;
