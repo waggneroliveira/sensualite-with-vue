@@ -1,5 +1,5 @@
 <template>
-  <section class="col-5 mt-4 m-auto">
+  <section class="col-11 col-md-10 col-lg-5 mt-4 m-auto">
     <!-- Botões de navegação -->
     <div class="d-flex gap-2 mb-0 col-11 m-auto">
       <button
