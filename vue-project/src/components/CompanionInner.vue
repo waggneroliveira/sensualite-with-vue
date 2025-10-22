@@ -1,197 +1,198 @@
 <template>
     <section id="companion" class="container-fluid">
-        <div class="container m-auto">
-            <CompanionRelational/>
-            <div class="col-11 col-md-10 col-lg-5 mt-4 m-auto">
-            <!-- Botões de navegação -->
-            <div class="d-flex gap-2 mb-0 col-11 m-auto">
-                <button
-                class="btn filter-content px-2"
-                :class="activeTab === 'perfil' ? 'gold-gradient inter font-medium font-15' : 'light-bt bg-red-primary inter font-medium text-berge'"
-                @click="activeTab = 'perfil'"
-                >
-                Perfil
-                </button>
+        <div class="container m-auto d-flex justify-content-center">
+            <CompanionNearby/>
+            <div class="col-11 col-md-10 col-lg-5 mt-4">
+                <!-- Botões de navegação -->
+                <div class="d-flex gap-2 mb-0 col-11 m-auto">
+                    <button
+                    class="btn filter-content px-2"
+                    :class="activeTab === 'perfil' ? 'gold-gradient inter font-medium font-15' : 'light-bt bg-red-primary inter font-medium text-berge'"
+                    @click="activeTab = 'perfil'"
+                    >
+                    Perfil
+                    </button>
 
-                <button
-                class="btn filter-content px-2"
-                :class="activeTab === 'galeria' ? 'gold-gradient inter font-medium font-15' : 'light-bt bg-red-primary inter font-medium text-berge'"
-                @click="activeTab = 'galeria'"
-                >
-                Galeria
-                </button>
+                    <button
+                    class="btn filter-content px-2"
+                    :class="activeTab === 'galeria' ? 'gold-gradient inter font-medium font-15' : 'light-bt bg-red-primary inter font-medium text-berge'"
+                    @click="activeTab = 'galeria'"
+                    >
+                    Galeria
+                    </button>
 
-                <button
-                class="btn filter-content px-2"
-                :class="activeTab === 'feed' ? 'gold-gradient inter font-medium font-15' : 'light-bt bg-red-primary inter font-medium text-berge'"
-                @click="activeTab = 'feed'"
-                >
-                Feed
-                </button>
-            </div>
+                    <button
+                    class="btn filter-content px-2"
+                    :class="activeTab === 'feed' ? 'gold-gradient inter font-medium font-15' : 'light-bt bg-red-primary inter font-medium text-berge'"
+                    @click="activeTab = 'feed'"
+                    >
+                    Feed
+                    </button>
+                </div>
 
-            <!-- Conteúdo -->
-            <div class="card bg-transparent text-light border-0 rounded-4 px-0 col-12 m-auto scroll pb-4">
-                <!-- PERFIL -->
+                <!-- Conteúdo -->
+                <div class="card bg-transparent text-light border-0 rounded-4 px-0 col-12 m-auto scroll pb-4">
+                    <!-- PERFIL -->
                     <div v-if="activeTab === 'perfil'">
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                    <p><strong>Localização:</strong> Salvador - BA</p>
-                    <p><strong>Peso:</strong> 100 kgs</p>
-                    <p><strong>Idade:</strong> 50 anos</p>
-                    <p><strong>Altura:</strong> 1,70m</p>
-                    <p><strong>Olhos:</strong> Castanho Escuro</p>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                            <p><strong>Localização:</strong> Salvador - BA</p>
+                            <p><strong>Peso:</strong> 100 kgs</p>
+                            <p><strong>Idade:</strong> 50 anos</p>
+                            <p><strong>Altura:</strong> 1,70m</p>
+                            <p><strong>Olhos:</strong> Castanho Escuro</p>
+                            </div>
+                            <div class="col-md-6">
+                            <p><strong>Saio com:</strong> Homens, mulheres, trans</p>
+                            <p><strong>Tipo:</strong> Morena</p>
+                            <p><strong>Biotipo:</strong> Atlético</p>
+                            <p><strong>Pés:</strong> 40</p>
+                            </div>
+                        </div>
+
+                        <hr class="border-danger opacity-75" />
+
+                        <h6 class="text-warning fw-bold mb-2">Atendimento</h6>
+                        <p><strong>Horários:</strong> Segunda à sexta, 09:00 às 18:00</p>
+                        <p><strong>Disponível para viagem?</strong> Sim</p>
+                        <p><strong>Atendo em:</strong> Hotéis, Motéis, Escritórios</p>
+                        <p><strong>Cachê:</strong> R$ 200/hora</p>
+
+                        <hr class="border-danger opacity-75" />
+
+                        <h6 class="text-warning fw-bold mb-3">Categorias</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span
+                            v-for="(cat, i) in categories"
+                            :key="i"
+                            class="badge px-3 py-2 rounded-pill"
+                            :class="cat.highlight ? 'gold-gradient inter font-medium font-15' : 'bg-red-primary text-light'"
+                            style="font-size: 0.9rem;"
+                            >
+                            {{ cat.name }}
+                            </span>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                    <p><strong>Saio com:</strong> Homens, mulheres, trans</p>
-                    <p><strong>Tipo:</strong> Morena</p>
-                    <p><strong>Biotipo:</strong> Atlético</p>
-                    <p><strong>Pés:</strong> 40</p>
+
+                    <!-- GALERIA -->
+                    <div v-if="activeTab === 'galeria'" class="row g-2">
+                        <div v-for="(img, i) in galleryImages" :key="i" class="col-6 col-md-4">
+                            <img
+                            :src="img"
+                            alt="galeria"
+                            class="rounded-4 w-100"
+                            style="object-fit: cover; height: 140px;"
+                            />
+                        </div>
                     </div>
-                </div>
 
-                <hr class="border-danger opacity-75" />
+                    <!-- FEED -->
+                    <div v-if="activeTab === 'feed'" class="mt-5 w-100 m-auto max-width-feed">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img
+                            :src="profileImage"
+                            alt="perfil"
+                            class="rounded-circle"
+                            style="width: 55px; height: 55px; object-fit: cover;"
+                            />
+                            <div>
+                            <h6 class="mb-0 inter font-20 text-berge font-bold">Alexandra Pimentel <small class="inter font-12 ms-2 text-berge font-regular">há 12 horas</small></h6>
+                            <small class="inter font-12 text-berge font-regular">Salvador - BA</small>
+                            </div>
+                        </div>
 
-                <h6 class="text-warning fw-bold mb-2">Atendimento</h6>
-                <p><strong>Horários:</strong> Segunda à sexta, 09:00 às 18:00</p>
-                <p><strong>Disponível para viagem?</strong> Sim</p>
-                <p><strong>Atendo em:</strong> Hotéis, Motéis, Escritórios</p>
-                <p><strong>Cachê:</strong> R$ 200/hora</p>
+                        <p>Vamos sair hoje?</p>
 
-                <hr class="border-danger opacity-75" />
+                        <div class="image-feed col-12">
+                            <Swiper
+                            :modules="[Autoplay]"
+                            :autoplay="false"
+                            :loop="false"
+                            class="rounded-2"
+                            >
+                                <SwiperSlide>
+                                    <img
+                                    :src="feedImages[0].src"
+                                    alt="feed vertical"
+                                    class="rounded-2 w-100 feed-vertical"
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <img
+                                    :src="feedImages[1].src"
+                                    alt="feed horizontal"
+                                    class="rounded-2 w-100 feed-vertical"
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <img
+                                    :src="feedImages[2].src"
+                                    alt="feed vertical"
+                                    class="rounded-2 w-100 feed-vertical"
+                                    />
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
 
-                <h6 class="text-warning fw-bold mb-3">Categorias</h6>
-                <div class="d-flex flex-wrap gap-2">
-                    <span
-                    v-for="(cat, i) in categories"
-                    :key="i"
-                    class="badge px-3 py-2 rounded-pill"
-                    :class="cat.highlight ? 'gold-gradient inter font-medium font-15' : 'bg-red-primary text-light'"
-                    style="font-size: 0.9rem;"
-                    >
-                    {{ cat.name }}
-                    </span>
-                </div>
-                </div>
-
-                <!-- GALERIA -->
-                <div v-if="activeTab === 'galeria'" class="row g-2">
-                <div v-for="(img, i) in galleryImages" :key="i" class="col-6 col-md-4">
-                    <img
-                    :src="img"
-                    alt="galeria"
-                    class="rounded-4 w-100"
-                    style="object-fit: cover; height: 140px;"
-                    />
-                </div>
-                </div>
-
-                <!-- FEED -->
-                <div v-if="activeTab === 'feed'" class="mt-5 w-100 m-auto max-width-feed">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <img
-                    :src="profileImage"
-                    alt="perfil"
-                    class="rounded-circle"
-                    style="width: 55px; height: 55px; object-fit: cover;"
-                    />
-                    <div>
-                    <h6 class="mb-0 inter font-20 text-berge font-bold">Alexandra Pimentel <small class="inter font-12 ms-2 text-berge font-regular">há 12 horas</small></h6>
-                    <small class="inter font-12 text-berge font-regular">Salvador - BA</small>
+                        <div class="d-flex align-items-center gap-2 like mt-3">
+                            <Like />
+                        </div>
                     </div>
-                </div>
 
-                <p>Vamos sair hoje?</p>
-
-                <div class="image-feed col-12">
-                    <Swiper
-                    :modules="[Autoplay]"
-                    :autoplay="false"
-                    :loop="false"
-                    class="rounded-2"
-                    >
-                        <SwiperSlide>
+                    <div v-if="activeTab === 'feed'" class="mt-5 w-100 m-auto max-width-feed">
+                        <div class="d-flex align-items-center gap-3 mb-3">
                             <img
-                            :src="feedImages[0].src"
-                            alt="feed vertical"
-                            class="rounded-2 w-100 feed-vertical"
+                            :src="profileImage"
+                            alt="perfil"
+                            class="rounded-circle"
+                            style="width: 55px; height: 55px; object-fit: cover;"
                             />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img
-                            :src="feedImages[1].src"
-                            alt="feed horizontal"
-                            class="rounded-2 w-100 feed-vertical"
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img
-                            :src="feedImages[2].src"
-                            alt="feed vertical"
-                            class="rounded-2 w-100 feed-vertical"
-                            />
-                        </SwiperSlide>
-                    </Swiper>
-                </div>
+                            <div>
+                            <h6 class="mb-0 inter font-20 text-berge font-bold">Alexandra Pimentel <small class="inter font-12 ms-2 text-berge font-regular">há 12 horas</small></h6>
+                            <small class="inter font-12 text-berge font-regular">Salvador - BA</small>
+                            </div>
+                        </div>
 
-                <div class="d-flex align-items-center gap-2 like mt-3">
-                    <Like />
-                </div>
-                </div>
+                        <p>Vamos sair hoje?</p>
 
-                <div v-if="activeTab === 'feed'" class="mt-5 w-100 m-auto max-width-feed">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <img
-                    :src="profileImage"
-                    alt="perfil"
-                    class="rounded-circle"
-                    style="width: 55px; height: 55px; object-fit: cover;"
-                    />
-                    <div>
-                    <h6 class="mb-0 inter font-20 text-berge font-bold">Alexandra Pimentel <small class="inter font-12 ms-2 text-berge font-regular">há 12 horas</small></h6>
-                    <small class="inter font-12 text-berge font-regular">Salvador - BA</small>
+                        <div class="image-feed col-12">
+                            <Swiper
+                            :modules="[Autoplay]"
+                            :autoplay="false"
+                            :loop="false"
+                            class="rounded-2"
+                            >
+                                <SwiperSlide>
+                                    <img
+                                    :src="feedImages[3].src"
+                                    alt="feed vertical"
+                                    class="rounded-2 w-100 feed-vertical"
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <img
+                                    :src="feedImages[4].src"
+                                    alt="feed horizontal"
+                                    class="rounded-2 w-100 feed-vertical"
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <img
+                                    :src="feedImages[5].src"
+                                    alt="feed vertical"
+                                    class="rounded-2 w-100 feed-vertical"
+                                    />
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2 like mt-3">
+                            <Like />
+                        </div>
                     </div>
-                </div>
-
-                <p>Vamos sair hoje?</p>
-
-                <div class="image-feed col-12">
-                    <Swiper
-                    :modules="[Autoplay]"
-                    :autoplay="false"
-                    :loop="false"
-                    class="rounded-2"
-                    >
-                        <SwiperSlide>
-                            <img
-                            :src="feedImages[3].src"
-                            alt="feed vertical"
-                            class="rounded-2 w-100 feed-vertical"
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img
-                            :src="feedImages[4].src"
-                            alt="feed horizontal"
-                            class="rounded-2 w-100 feed-vertical"
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img
-                            :src="feedImages[5].src"
-                            alt="feed vertical"
-                            class="rounded-2 w-100 feed-vertical"
-                            />
-                        </SwiperSlide>
-                    </Swiper>
-                </div>
-
-                <div class="d-flex align-items-center gap-2 like mt-3">
-                    <Like />
-                </div>
                 </div>
             </div>
-            </div>
+            <CompanionRelational/>
         </div>
     </section>
 </template>
@@ -203,6 +204,7 @@ import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import Like from '@/components/Like.vue';
 import CompanionRelational from '@/components/CompanionRelational.vue';
+import CompanionNearby from '@/components/CompanionNearby.vue';
 
 // Aba ativa
 const activeTab = ref('feed')

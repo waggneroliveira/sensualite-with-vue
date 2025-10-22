@@ -51,7 +51,7 @@
                 <div class="d-flex flex-row col-12 justify-content-start align-items-center gap-3">                    
                     <div class="followers text-berge inter font-regular">
                         <span class="text-grey-one font-24 inter font-bold me-2">250</span>
-                        Seguidora
+                        Seguidores
                     </div>
                     <div class="liked text-berge inter font-regular">
                         <span class="text-grey-one font-24 inter font-bold me-2">125</span>
@@ -96,7 +96,7 @@
         border: 1px solid #D9D9D9;
     }
     .banner-interno {
-        height: 382px;
+        height: 425px;
         object-fit: cover;
         object-position: center;
         display: block;
