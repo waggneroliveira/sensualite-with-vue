@@ -84,39 +84,122 @@
                     </div>
 
                     <!-- GALERIA -->
-                    <!-- <div v-if="activeTab === 'galeria'" class="row g-2 col-11 m-auto mt-4">
-                        <div v-for="(img, i) in galleryImages" :key="i" class="col-6 col-md-4">
-                            <img
-                            :src="img"
-                            alt="galeria"
-                            class="rounded-2 w-100"
-                            style="object-fit: cover; height: 140px;"
-                            />
-                        </div>
-                    </div> -->
                     <div v-if="activeTab === 'galeria'" class="row g-2 col-11 m-auto mt-4">
-                        <div
-                        v-for="(img, i) in galleryImages"
-                        :key="i"
-                        class="col-6 col-md-4"
-                        @click="openLightbox(i)"
-                        style="cursor: pointer;"
-                        >
-                        <img
-                            :src="img"
-                            alt="galeria"
-                            class="rounded-2 w-100"
-                            style="object-fit: cover; height: 140px;"
-                        />
+
+                        <!-- Filtro interno -->
+                        <ul class="nav justify-content-start gap-2 mb-3">
+                            <li class="nav-item">
+                                <button
+                                class="nav-link py-1 px-3 bg-red-primary text-berge inter font-medium font-15"
+                                :class="{ active: activeGalleryTab === 'fotos' }"
+                                @click="activeGalleryTab = 'fotos'"
+                                >
+                                Fotos
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button
+                                class="nav-link py-1 px-3 bg-red-primary text-berge inter font-medium font-15"
+                                :class="{ active: activeGalleryTab === 'videos' }"
+                                @click="activeGalleryTab = 'videos'"
+                                >
+                                Vídeos
+                                </button>
+                            </li>
+                        </ul>
+
+                        <!-- FOTOS -->
+                        <div v-if="activeGalleryTab === 'fotos'" class="col-12 row g-2">
+                            <!-- Miniaturas da galeria -->
+                            <div
+                            v-for="(img, i) in galleryImages"
+                            :key="'img-' + i"
+                            class="col-6 col-md-4"
+                            >
+                            <img
+                                :src="img"
+                                alt=""
+                                class="img-fluid rounded-2"
+                                style="cursor: pointer; object-fit: cover; height: 250px; width: 100%;"
+                                @click="openLightbox(i)"
+                            />
+                            </div>
+
+                            <!-- Lightbox -->
+                            <VueEasyLightbox
+                            :visible="visible"
+                            :imgs="galleryImages"
+                            :index="index"
+                            @hide="visible = false"
+                            />
+
+                            <div v-if="visible" class="custom-arrows">
+                                <button class="arrow rounded-2 left" @click="prev">&#10094;&#10094;</button>
+                                <button class="arrow rounded-2 right" @click="next">&#10095;&#10095;</button>
+                            </div>                            
                         </div>
 
-                        <!-- Lightbox -->
-                        <vue-easy-lightbox
-                        :visible="visible"
-                        :imgs="galleryImages"
-                        :index="index"
-                        @hide="visible = false"
-                        />
+                        <!-- VÍDEOS -->
+                        <div v-if="activeGalleryTab === 'videos'" class="col-12 row g-2">
+                            <div
+                                v-for="(video, i) in galleryVideos"
+                                :key="'video-' + i"
+                                class="col-6 col-md-4"
+                                @click="openVideo(i)"
+                                style="cursor: pointer;"
+                            >
+                                <video
+                                :src="video"
+                                muted
+                                class="rounded-2 w-100"
+                                style="object-fit: cover; height: 260px;"
+                                ></video>
+                            </div>
+
+                            <!-- Lightbox custom para vídeos -->
+                            <div
+                                v-if="videoVisible"
+                                class="position-fixed start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+                                style="background: rgba(0, 0, 0, 0.85); z-index: 9999;top:-8px"
+                                @click.self="closeVideo"
+                            >
+                                <!-- Vídeo -->
+                                <video
+                                :src="galleryVideos[currentVideoIndex]"
+                                controls
+                                autoplay
+                                style="max-width: 90%; max-height: 90%; border-radius: 10px;"
+                                ></video>
+
+                                <!-- Botão fechar -->
+                                <button
+                                @click="closeVideo"
+                                class="btn text-berge position-absolute top-0 end-0 m-4 p-0 rounded-2"
+                                style="width: 35px;height:35px;font-size:22px;"
+                                >
+                                &times;
+                                </button>
+
+                                <!-- Setas de navegação -->
+                                <button
+                                v-if="galleryVideos.length > 1"
+                                @click.stop="prevVideo"
+                                class="btn prev d-flex position-absolute start-0 top-50 translate-middle-y rounded-2"
+                                style="width: 50px; height: 50px; font-size: 24px;"
+                                >
+                                &#10094;&#10094;
+                                </button>
+
+                                <button
+                                v-if="galleryVideos.length > 1"
+                                @click.stop="nextVideo"
+                                class="btn next d-flex position-absolute end-0 top-50 translate-middle-y rounded-2"
+                                style="width: 50px; height: 50px; font-size: 24px;"
+                                >
+                                &#10095;&#10095;
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- FEED -->
@@ -216,54 +299,49 @@ import { Autoplay, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import VueEasyLightbox from 'vue-easy-lightbox'
-import Like from '@/components/Like.vue';
-import CompanionRelational from '@/components/CompanionRelational.vue';
-import CompanionNearby from '@/components/CompanionNearby.vue';
+import Like from '@/components/Like.vue'
+import CompanionRelational from '@/components/CompanionRelational.vue'
+import CompanionNearby from '@/components/CompanionNearby.vue'
 
+// Lightbox
 const visible = ref(false)
 const index = ref(0)
 
+// Props
 const props = defineProps({
   activeTab: String
 })
 
-// Aba ativa
+// Aba ativa geral
 const activeTab = ref('feed')
-// Por enquanto, definimos manualmente:
+// Aba interna da galeria (Fotos/Vídeos)
+const activeGalleryTab = ref('fotos')
+// Orientação do feed
 const orientationClass = ref('feed-vertical') // ou 'feed-horizontal'
-
-// Imagens resolvidas via import
+// Imagem de perfil
 const profileImage = new URL('@/assets/images/a11.jpg', import.meta.url).href
+
 // Imagens do feed
 const feedImages = ref([
-  {
-    src: new URL('@/assets/images/a4.jpg', import.meta.url).href,
-  },
-  {
-    src: new URL('@/assets/images/a12.jpg', import.meta.url).href,
-  },
-  {
-    src: new URL('@/assets/images/a13.jpg', import.meta.url).href,
-  },
-  {
-    src: new URL('@/assets/images/a11.jpg', import.meta.url).href,
-  }
+  { src: new URL('@/assets/images/a4.jpg', import.meta.url).href },
+  { src: new URL('@/assets/images/a12.jpg', import.meta.url).href },
+  { src: new URL('@/assets/images/a13.jpg', import.meta.url).href },
+  { src: new URL('@/assets/images/a11.jpg', import.meta.url).href }
 ])
-// função que ajusta os seletores ANTES da inicialização do Swiper
+
+// Config Swiper
 const onBeforeInit = (swiper) => {
-  // garante que o objeto navigation exista
   swiper.params.navigation = swiper.params.navigation || {}
   swiper.params.navigation.nextEl = '.swiper-button-next-customer'
   swiper.params.navigation.prevEl = '.swiper-button-prev-customer'
 
-  // inicializa e atualiza a navegação do swiper
-  // (às vezes init/update devem ser chamados manualmente)
   if (swiper.navigation) {
     swiper.navigation.init()
     swiper.navigation.update()
   }
 }
-
+defineExpose({ VueEasyLightbox })
+// Galeria — Fotos
 const galleryImages = [
   new URL('@/assets/images/a1.jpg', import.meta.url).href,
   new URL('@/assets/images/a2.jpg', import.meta.url).href,
@@ -278,21 +356,61 @@ const galleryImages = [
   new URL('@/assets/images/a23.jpg', import.meta.url).href,
   new URL('@/assets/images/a24.jpg', import.meta.url).href
 ]
-// Abre o lightbox na imagem clicada
+
+const videoVisible = ref(false)
+const currentVideoIndex = ref(0)
+
+function openVideo(i) {
+  currentVideoIndex.value = i
+  videoVisible.value = true
+}
+
+function closeVideo() {
+  videoVisible.value = false
+}
+
+function nextVideo() {
+  currentVideoIndex.value =
+    (currentVideoIndex.value + 1) % galleryVideos.length
+}
+
+function prevVideo() {
+  currentVideoIndex.value =
+    (currentVideoIndex.value - 1 + galleryVideos.length) % galleryVideos.length
+}
+
+// Galeria — Vídeos
+const galleryVideos = [
+  new URL('@/assets/videos/story1.mp4', import.meta.url).href,
+  new URL('@/assets/videos/video02.mp4', import.meta.url).href,
+  new URL('@/assets/videos/video03.mp4', import.meta.url).href,
+  new URL('@/assets/videos/video04.mp4', import.meta.url).href
+]
+
+// Lightbox
 function openLightbox(i) {
   index.value = i
   visible.value = true
 }
+function next() {
+  index.value = (index.value + 1) % galleryImages.length
+}
 
+function prev() {
+  index.value =
+    (index.value - 1 + galleryImages.length) % galleryImages.length
+}
+
+// Slug de categorias
 const createSlug = str =>
   str
     .toLowerCase()
-    .normalize('NFD') // remove acentos
+    .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '') // remove caracteres especiais
+    .replace(/[^a-z0-9-]/g, '')
     .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '') // remove hífen no início/fim
+    .replace(/^-|-$/g, '')
 
 const categories = ref([
   { name: 'Namoradinha', highlight: true },
@@ -302,7 +420,6 @@ const categories = ref([
   ...cat,
   slug: createSlug(cat.name)
 })))
-
 </script>
 
 <script>
@@ -311,8 +428,55 @@ const categories = ref([
     }
 </script>
 
+<style>
+    .vel-btns-wrapper .btn__prev, .vel-btns-wrapper .btn__next{
+        display: none;
+    }
+    .vel-icon{
+        font-size: 18px;
+    }
+    .vel-btns-wrapper .btn__close {
+        right: 35px;
+        top: 35px;
+    }
+    .vel-modal{
+        background: rgba(0, 0, 0, 0.85);
+    }
+</style>
+
 <style scoped>
-/* Opcional — apenas estética */
+
+.custom-arrows {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 9999;
+    pointer-events: none;
+}
+.arrow {
+    pointer-events: all;
+    background: transparent;
+    border: none;
+    color: white;
+    opacity: 0.7;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #F9E4B7;
+    font-size: 24px;
+}
+.nav-link.py-1.px-3.bg-red-primary{
+    border-radius: 10px;
+}
+.nav-item.show .nav-link, .nav-link.active{
+    background: linear-gradient(to bottom, #F9E4B7, #E6C27A, #C6A14D, #8C6C3A, #F9E4B7) !important;
+    border-color: transparent !important;
+    color: #390B0F !important;
+} 
 img {
   transition: transform 0.3s;
 }
@@ -322,7 +486,8 @@ img:hover {
 .image-feed {
   position: relative;
 }
-
+.btn.next,
+.btn.prev,
 .swiper-button-prev-customer,
 .swiper-button-next-customer {
   position: absolute;
@@ -339,11 +504,15 @@ img:hover {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-
+.arrow:hover,
+/* .btn.text-berge.position-absolute:hover, */
+.btn.next:hover,
+.btn.prev:hover,
 .swiper-button-prev-customer:hover,
 .swiper-button-next-customer:hover {
     background-color: #8C6C3A;
     color: white;
+    opacity: 1;
 }
 
 /* Posicionamento lateral */
@@ -394,10 +563,12 @@ img:hover {
   background: linear-gradient(to bottom, #000000 0%, #390B0F 100%);
   overflow: hidden;
 }
-.light-bt.bg-red-primary.font-medium:hover, .bg-red-primary.text-berge.border-color:hover{
+.light-bt.bg-red-primary.font-medium:hover, .bg-red-primary.text-berge.border-color:hover,
+.nav-item.show .nav-link, .nav-link:hover{
     background: linear-gradient(to bottom, #F9E4B7, #E6C27A, #C6A14D, #8C6C3A, #F9E4B7);
     transition: all 0.3s ease;
     color: #390B0F !important;
+    border-color: transparent !important;
 }
 .bg-red-primary.font-medium::before {
     content: "";
@@ -424,10 +595,10 @@ img:hover {
     color: #390B0F;
 }
 .bg-red-primary.text-berge.border-color {
-  position: relative;
-  border-radius: 10px 10px 0 0;
-  background: linear-gradient(to bottom, #000000 0%, #390B0F 100%);
-  overflow: hidden;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(to bottom, #000000 0%, #390B0F 100%);
+    overflow: hidden;
 }
 .bg-red-primary.text-berge.border-color::before{
     content: "";
