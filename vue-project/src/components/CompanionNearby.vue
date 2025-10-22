@@ -15,27 +15,30 @@
             class="rounded-3 overflow-hidden mt-3 position-relative"
         >
             <SwiperSlide v-for="(item, index) in companions" :key="index">
-                <a :href="item.link" target="_blank" rel="noopener noreferrer">
-                    <img :src="item.image" alt="Companion" class="w-100 d-block thumb" />
-
-                </a>
-
-                <div class="d-flex justify-content-between align-items-center mb-0">
-                    <div class="row">
-                        <h5 class="inter text-berge font-15 mt-3 mb-0">{{item.name}}</h5>
-                        <h6 class="inter text-berge font-12 mt-0">{{item.location}}</h6>
+                <img :src="item.image" alt="Companion" class="w-100 d-block thumb" />
+                <div class="d-flex justify-content-between mt-3">
+                    <div class="col-7">
+                        <h5 class="inter text-berge font-15 mb-0">{{item.name}}</h5>
+                        <h6 class="inter text-berge font-12 mt-0">{{item.location}}</h6>  
                     </div>
-                    <div class="swiper-nav d-flex gap-2">
-                        <button class="swiper-button-prev-custom-1 d-flex justify-content-center align-items-center btn btn-sm rounded">
-                            &#10094;
-                        </button>
-                        <button class="swiper-button-next-custom-1 d-flex justify-content-center align-items-center btn btn-sm rounded">
-                            &#10095;
-                        </button>
-                    </div>
+
+                    <a :href="item.link" target="_blank" 
+                    class="col-4 d-flex justify-content-center align-items-center text-decoration-none gold-gradient rounded-5 px-2 font-12 inter font-regular" 
+                    rel="noopener noreferrer"
+                    style="color:#390B0F; height: 28px;">
+                        <span>Ver perfil</span>
+                    </a>
                 </div>
-                
             </SwiperSlide>
+
+            <div class="swiper-nav d-flex gap-2 justify-content-start">
+                <button class="swiper-button-prev-custom-1 d-flex justify-content-center align-items-center btn btn-sm rounded">
+                    &#10094;
+                </button>
+                <button class="swiper-button-next-custom-1 d-flex justify-content-center align-items-center btn btn-sm rounded">
+                    &#10095;
+                </button>
+            </div>
         </Swiper>
     </div>
   </aside>
