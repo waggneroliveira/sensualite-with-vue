@@ -1,13 +1,13 @@
 <template>
     <div class="container-fluid p-0 position-relative">
         <img 
-        src="@/assets/images/banner-inner-1.jpg" 
+        src="@/assets/images/a17.jpg" 
         alt="Banner interno" 
         class="banner-interno w-100"
         >
         <div class="w-100 px-5 position-absolute">
             <img 
-            src="@/assets/images/profile.jpg" 
+            src="@/assets/images/a11.jpg" 
             alt="Foto de perfil" 
             class="image-profile p-2 position-absolute"
             >
@@ -110,7 +110,7 @@
         width: 279px;
         height: 279px;
         object-fit: cover;
-        object-position: top center;
+        object-position: center;
         background: linear-gradient(to bottom, #F9E4B7, #E6C27A, #C6A14D, #8C6C3A, #F9E4B7);
         position: relative;
         z-index: 1;

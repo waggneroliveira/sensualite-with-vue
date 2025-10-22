@@ -96,7 +96,7 @@
                             style="width: 55px; height: 55px; object-fit: cover;"
                             />
                             <div>
-                            <h6 class="mb-0 inter font-20 text-berge font-bold">Alexandra Pimentel <small class="inter font-12 ms-2 text-berge font-regular">há 12 horas</small></h6>
+                            <h6 class="mb-0 inter font-20 text-berge font-bold">Jade Miller <small class="inter font-12 ms-2 text-berge font-regular">há 12 horas</small></h6>
                             <small class="inter font-12 text-berge font-regular">Salvador - BA</small>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                             style="width: 55px; height: 55px; object-fit: cover;"
                             />
                             <div>
-                            <h6 class="mb-0 inter font-20 text-berge font-bold">Alexandra Pimentel <small class="inter font-12 ms-2 text-berge font-regular">há 12 horas</small></h6>
+                            <h6 class="mb-0 inter font-20 text-berge font-bold">Jade Miller <small class="inter font-12 ms-2 text-berge font-regular">há 12 horas</small></h6>
                             <small class="inter font-12 text-berge font-regular">Salvador - BA</small>
                             </div>
                         </div>
@@ -165,20 +165,6 @@
                                 <SwiperSlide>
                                     <img
                                     :src="feedImages[3].src"
-                                    alt="feed vertical"
-                                    class="rounded-2 w-100 feed-vertical"
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img
-                                    :src="feedImages[4].src"
-                                    alt="feed horizontal"
-                                    class="rounded-2 w-100 feed-vertical"
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img
-                                    :src="feedImages[5].src"
                                     alt="feed vertical"
                                     class="rounded-2 w-100 feed-vertical"
                                     />
@@ -214,26 +200,20 @@ const activeTab = ref('feed')
 const orientationClass = ref('feed-vertical') // ou 'feed-horizontal'
 
 // Imagens resolvidas via import
-const profileImage = new URL('@/assets/images/profile.jpg', import.meta.url).href
+const profileImage = new URL('@/assets/images/a11.jpg', import.meta.url).href
 // Imagens do feed
 const feedImages = ref([
   {
-    src: new URL('@/assets/images/a1.jpg', import.meta.url).href,
+    src: new URL('@/assets/images/a4.jpg', import.meta.url).href,
   },
   {
-    src: new URL('@/assets/images/a17.jpg', import.meta.url).href,
+    src: new URL('@/assets/images/a12.jpg', import.meta.url).href,
   },
   {
-    src: new URL('@/assets/images/a6.jpg', import.meta.url).href,
+    src: new URL('@/assets/images/a13.jpg', import.meta.url).href,
   },
   {
-    src: new URL('@/assets/images/a7.jpg', import.meta.url).href,
-  },
-  {
-    src: new URL('@/assets/images/a8.jpg', import.meta.url).href,
-  },
-  {
-    src: new URL('@/assets/images/a9.jpg', import.meta.url).href,
+    src: new URL('@/assets/images/a11.jpg', import.meta.url).href,
   }
 ])
 
