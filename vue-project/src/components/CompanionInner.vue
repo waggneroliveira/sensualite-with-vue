@@ -270,7 +270,13 @@ const galleryImages = [
   new URL('@/assets/images/a14.jpg', import.meta.url).href,
   new URL('@/assets/images/a4.jpg', import.meta.url).href,
   new URL('@/assets/images/a17.jpg', import.meta.url).href,
-  new URL('@/assets/images/a10.jpg', import.meta.url).href
+  new URL('@/assets/images/a10.jpg', import.meta.url).href,
+  new URL('@/assets/images/a19.jpg', import.meta.url).href,
+  new URL('@/assets/images/a20.jpg', import.meta.url).href,
+  new URL('@/assets/images/a21.jpg', import.meta.url).href,
+  new URL('@/assets/images/a22.jpg', import.meta.url).href,
+  new URL('@/assets/images/a23.jpg', import.meta.url).href,
+  new URL('@/assets/images/a24.jpg', import.meta.url).href
 ]
 // Abre o lightbox na imagem clicada
 function openLightbox(i) {
