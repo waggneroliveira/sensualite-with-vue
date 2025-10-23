@@ -290,6 +290,10 @@
             <CompanionRelational/>
         </div>
     </section>
+
+    <div id="feedback-app">
+        <FeedbackSection />
+    </div>
 </template>
 
 <script setup>
@@ -302,6 +306,8 @@ import VueEasyLightbox from 'vue-easy-lightbox'
 import Like from '@/components/Like.vue'
 import CompanionRelational from '@/components/CompanionRelational.vue'
 import CompanionNearby from '@/components/CompanionNearby.vue'
+import FeedbackSection from '@/components/FeedbackSection.vue'
+
 
 // Lightbox
 const visible = ref(false)
