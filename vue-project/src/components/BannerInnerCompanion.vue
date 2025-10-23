@@ -158,6 +158,7 @@
         }
         .info-profile{
             margin-top: 35px !important;
+            justify-content: start !important;
         }
     }
     @media (max-width: 761px) {
@@ -267,6 +268,8 @@
         }
         .followers, .liked, .publishings{
             text-align: left;
+            display: flex;
+            flex-direction: column;
         }
         .text{
             font-size: 0.6875rem !important;
