@@ -96,7 +96,7 @@
         <!-- Cabeçalho -->
         <div class="d-flex justify-content-between align-items-center mt-5 mb-4">
             <div>
-                <h3 class="fw-bold text-light">Comentários</h3>
+                <h3 class="inter font-25 font-bold text-berge">Comentários</h3>
                 <h6 class="text-secondary">3 Avaliações</h6>
             </div>
         </div>
