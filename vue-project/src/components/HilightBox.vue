@@ -69,7 +69,7 @@
 
 <script setup>
 import { ref } from "vue";
-
+import KingViews from '@/components/KingViews.vue';
 // Mock de dados
 const randomCompanions = ref([
   { name: "Elisângela Felipa", image: new URL('@/assets/images/a1.jpg', import.meta.url).href, link: "/" },

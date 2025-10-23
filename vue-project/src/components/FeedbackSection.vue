@@ -1,6 +1,6 @@
 <template>
   <section class="feedback-section my-5">
-    <div class="container">
+    <div class="container container-mobile">
         <!-- Formulário -->
         <div class="card-top avaliation bg-transparent rounded-4 text-light p-4 mt-5">
             <form>
@@ -318,6 +318,9 @@ const staticFeedbacks = [
 
     /* ====== Responsividade ====== */
     @media (max-width: 768px) {
+    .container-mobile{
+        max-width: inherit !important;
+    }
     .card {
         padding: 16px;
     }

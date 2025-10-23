@@ -1,8 +1,11 @@
 <template>
     <section id="companion" class="container-fluid">
-        <div class="container m-auto d-flex justify-content-center">
-            <CompanionNearby/>
-            <div class="col-11 col-md-10 col-lg-5 mt-4">
+        <div class="col-12 p-0 m-auto d-flex justify-content-center">
+            <div class="d-flex flex-column col-3 d-none d-lg-block">
+                <CompanionNearby/>
+                <AnnouncementVertical/>
+            </div>
+            <div class="col-12 col-md-10 col-lg-5 mt-4">
                 <!-- Botões de navegação -->
                 <div class="d-flex gap-2 mb-0 col-11 m-auto">
                     <button
@@ -18,7 +21,7 @@
                     :class="activeTab === 'galeria' ? 'gold-gradient inter font-medium font-15' : 'light-bt bg-red-primary inter font-medium text-berge'"
                     @click="activeTab = 'galeria'"
                     >
-                    Galeria
+                    Mídia
                     </button>
 
                     <button
@@ -26,7 +29,7 @@
                     :class="activeTab === 'feed' ? 'gold-gradient inter font-medium font-15' : 'light-bt bg-red-primary inter font-medium text-berge'"
                     @click="activeTab = 'feed'"
                     >
-                    Feed
+                    Postagens
                     </button>
                 </div>
 
@@ -35,7 +38,7 @@
                     <!-- PERFIL -->
                     <div v-if="activeTab === 'perfil'" class="col-11 m-auto mt-4">
                         <div class="d-flex mb-4 flex-wrap">
-                            <h6 class="inter font-medium font-20 text-gradient mb-2 w-100 mb-4">Informações de perfil</h6>
+                            <h6 class="inter font-medium font-20 text-gradient mb-2 w-100 mb-4 card-title">Informações de perfil</h6>
                             <div class="col-md-6 p-0">
                                 <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Localização:</strong> Salvador - BA</p>
                                 <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Peso:</strong> 100 kgs</p>
@@ -53,7 +56,7 @@
 
                         <hr class="border-danger opacity-75" />
 
-                        <h6 class="inter font-medium font-20 text-gradient mb-4">Atendimento</h6>
+                        <h6 class="inter font-medium font-20 text-gradient mb-4 card-title">Atendimento</h6>
                         <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Horários:</strong> Segunda à sexta, 09:00 às 18:00</p>
                         <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Disponível para viagem?</strong> Sim</p>
                         <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Atendo em:</strong> Hotéis, Motéis, Escritórios</p>
@@ -61,9 +64,9 @@
 
                         <hr class="border-danger opacity-75" />
 
-                        <h6 class="inter font-medium font-20 text-gradient mb-4">Categorias</h6>
+                        <h6 class="inter font-medium font-20 text-gradient mb-4 card-title">Categorias</h6>
 
-                        <div class="d-flex gap-2">
+                        <div class="d-flex gap-2 flex-wrap">
                             <RouterLink
                                 v-for="(cat, i) in categories"
                                 :key="i"
@@ -287,7 +290,9 @@
                     </div>
                 </div>
             </div>
-            <CompanionRelational/>
+            <div class="d-flex flex-column col-3 d-none d-lg-block">
+                <CompanionRelational/>
+            </div>            
         </div>
     </section>
 
@@ -307,6 +312,7 @@ import Like from '@/components/Like.vue'
 import CompanionRelational from '@/components/CompanionRelational.vue'
 import CompanionNearby from '@/components/CompanionNearby.vue'
 import FeedbackSection from '@/components/FeedbackSection.vue'
+import AnnouncementVertical from '@/components/AnnouncementVertical.vue'
 
 
 // Lightbox
@@ -622,7 +628,7 @@ img:hover {
 }
 .scroll {
   overflow-y: auto;
-  height: 720px;
+  height: 730px;
   scrollbar-width: thin; 
   scrollbar-color: #C6A14D #1a0000; 
 }
@@ -647,6 +653,33 @@ img:hover {
 .scroll::-webkit-scrollbar-thumb:hover {
   background: #c30a17;
 }
+@media (max-width: 768px) {
 
-
+}
+@media (max-width: 576px) {
+    .max-width-feed{
+        max-width: 90%;
+    }
+}
+@media (max-width: 476px) {
+    .badge.px-3.py-2.rounded-pill{
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+    }
+    .mb-0.inter.font-20.text-berge.font-bold, .card-title{
+        font-size: 1rem;
+        margin-bottom: 15px !important;
+    }
+    .nav-link.py-1.px-3.bg-red-primary, strong.inter.font-medium.font-18.text-white{
+        font-size: 0.75rem !important;
+    }
+    .inter.font-medium.font-15.text-berge.mb-1{
+        font-size: 0.75rem !important;
+    }
+    .btn.filter-content {
+        font-size: 0.75rem !important;
+        padding: 4px 6px !important;
+        max-width: 85px !important;
+    }
+}
 </style>

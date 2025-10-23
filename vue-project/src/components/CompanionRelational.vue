@@ -1,5 +1,5 @@
 <template>
-  <aside class="position-relative col-3">
+  <aside class="position-relative col-12 d-none d-lg-block">
     <div class="box-relational p-3 text-light rounded-3 col-10 m-auto">
       <div class="d-flex justify-content-between align-items-center mb-2">
         <h4 class="mb-0 text-berge inter font-15 font-medium text-uppercase">Gatas do dia</h4>
