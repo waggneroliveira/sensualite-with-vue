@@ -51,6 +51,7 @@
                                 <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Tipo:</strong> Morena</p>
                                 <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Biotipo:</strong> Atlético</p>
                                 <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Pés:</strong> 40</p>
+                                <p class="inter font-medium font-15 text-berge mb-1"><strong class="inter font-medium font-18 text-white">Perfil criado em:</strong> Setembro 2025</p>
                             </div>
                         </div>
 
