@@ -1,9 +1,9 @@
 <template>
-  <div class="container mt-5 position-relative m-auto">
-    <div class="col-lg-8 col-11 m-auto">
+  <div class="container cont-fluid mt-5 position-relative m-auto">
+    <div class="col-lg-8 col-11 m-auto col-w-100">
       <Swiper
         :modules="[Autoplay, EffectFade]"
-        :autoplay="{ delay: 5000, disableOnInteraction: false }"
+        :autoplay="{ delay: 7000, disableOnInteraction: false }"
         :loop="true"
         effect="fade"
         :fade-effect="{ crossFade: true }"

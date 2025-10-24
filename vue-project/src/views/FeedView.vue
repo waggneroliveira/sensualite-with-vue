@@ -6,9 +6,9 @@
     <div class="position-relative">
         <Feed />
     </div>
-    <div class="col-12">
+    <!-- <div class="col-12">
         <AnnouncementHorizontal/>
-    </div>
+    </div> -->
 
 </template>
 

@@ -2,13 +2,11 @@
     <section id="companion" class="container-fluid mt-5">
         <div class="col-12 p-0 m-auto d-flex justify-content-center">
             <div class="d-flex flex-column col-3 d-none d-lg-block">
-                <CompanionNearby/>
+                <Popular/>
             </div>
             <div class="col-12 col-md-10 col-lg-5 mt-0">
-
                 <!-- Conteúdo -->
                 <div class="card bg-transparent text-light border-0 rounded-4 px-0 col-12 m-auto scroll pb-4">
-
                     <!-- FEED -->
                     <div v-if="activeTab === 'feed'" class="mt-4 w-100 m-auto max-width-feed">
                         <div class="d-flex align-items-center gap-3 mb-3">
@@ -93,9 +91,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12">
+                    <AnnouncementHorizontal/>
+                </div>
             </div>
             <div class="d-flex flex-column col-3 d-none d-lg-block">
                 <CompanionRelational/>
+                <AnnouncementVertical/>
             </div>            
         </div>
     </section>
@@ -110,7 +112,9 @@ import 'swiper/css/navigation'
 import VueEasyLightbox from 'vue-easy-lightbox'
 import Like from '@/components/Like.vue'
 import CompanionRelational from '@/components/CompanionRelational.vue'
-import CompanionNearby from '@/components/CompanionNearby.vue'
+import Popular from '@/components/Popular.vue'
+import AnnouncementVertical from '@/components/AnnouncementVertical.vue'
+import AnnouncementHorizontal from '@/components/AnnouncementHorizontal.vue'
 
 // Lightbox
 const visible = ref(false)
@@ -176,7 +180,14 @@ function openLightbox(i) {
 </style>
 
 <style scoped>
-
+:deep(.cont-fluid){
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin-top: 30px !important;
+}
+:deep(.col-w-100){
+    width: 100%;
+}
 .custom-arrows {
     position: fixed;
     top: 50%;
@@ -347,7 +358,7 @@ img:hover {
 }
 .scroll {
   overflow-y: auto;
-  height: 730px;
+  height: 894px;
   scrollbar-width: thin; 
   scrollbar-color: #C6A14D #1a0000; 
 }
