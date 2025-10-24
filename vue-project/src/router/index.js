@@ -20,6 +20,11 @@ const router = createRouter({
       name: 'acompanhante/interna',
       component: () => import('../views/CompanionInnerView.vue')
     },
+    {
+      path: '/feed',
+      name: 'feed',
+      component: () => import('../views/FeedView.vue')
+    },
   ],
 })
 
