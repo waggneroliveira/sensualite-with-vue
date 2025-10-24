@@ -4,16 +4,16 @@
         <!-- Formulário -->
         <div class="card-top avaliation bg-transparent rounded-4 text-light p-4 mt-5">
             <form>
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
-                    <h4 class="title-section mb-0 inter font-bold font-28 text-gradient text-center text-md-start col-12 col-lg-9">
+                <div class="d-flex flex-row justify-content-between align-items-start align-items-md-center gap-3 column-mid">
+                    <h4 class="title-section mb-0 inter font-bold font-28 text-gradient text-start col-12 col-md-12 col-lg-6">
                         Escreva a sua avaliação
                     </h4>
 
                     <!-- Estrelas -->
-                    <div class="mb-2 mb-md-0 col-12 col-lg-3">
-                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-2">
+                    <div class="mb-2 mb-md-0 col-12 col-md-12 col-lg-6">
+                        <div class="d-flex flex-row align-items-center justify-content-end gap-2 me-3">
                         <label
-                            class="form-label inter font-regular font-15 text-berge mb-0 mt-2 text-center text-sm-start"
+                            class="form-label inter font-regular font-15 text-berge mb-0 mt-2 text-start"
                             >Nível de experiência:</label
                         >
                         <div
@@ -41,17 +41,17 @@
                 </div>
 
                 <!-- Mensagem -->
-                <div class="mb-3 mt-5">
-                <textarea
-                    class="form-control text-berge inter font-15 font-light"
-                    rows="3"
-                    placeholder="Escreva aqui um comentário sobre o(a) profissional"
-                    required
-                ></textarea>
+                <div class="mb-3 mt-5 msg">
+                    <textarea
+                        class="form-control text-berge inter font-15 font-light"
+                        rows="3"
+                        placeholder="Escreva aqui um comentário sobre o(a) profissional"
+                        required
+                    ></textarea>
                 </div>
 
                 <div
-                class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3"
+                class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3 gap-mobile"
                 >
                 <!-- Privacidade -->
                 <div class="form-check mb-0">
@@ -63,7 +63,7 @@
                     Aceito os termos descritos na
                     <a
                         href="#"
-                        class="text-decoration-underline inter font-15 font-regular"
+                        class="text-decoration-underline inter font-15 font-regular privacy-policy"
                         >Política de Privacidade</a
                     >
                     </label>
@@ -96,7 +96,7 @@
         <!-- Cabeçalho -->
         <div class="d-flex justify-content-between align-items-center mt-5 mb-4">
             <div>
-                <h3 class="inter font-25 font-bold text-berge">Comentários</h3>
+                <h3 class="inter font-25 font-bold text-berge title-section">Comentários</h3>
                 <h6 class="text-secondary">3 Avaliações</h6>
             </div>
         </div>
@@ -107,7 +107,7 @@
         :key="index"
         class="card text-light mb-3 p-3"
         >
-            <div class="d-flex justify-content-between align-items-start">
+            <div class="d-flex flex-row justify-content-between align-items-start">
                 <!-- Usuário -->
                 <div class="d-flex align-items-center gap-3">
                     <img
@@ -148,7 +148,7 @@
             <!-- Resposta -->
             <div v-if="feedback.response" class="border-top pt-3 mt-3">
                 <div class="resposta">
-                    <h6 class="fw-bold text-light">Resposta:</h6>
+                    <h6 class="inter font-15 font-medium text-berge response">Resposta:</h6>
                     <div class="d-flex align-items-center gap-3 mb-2">
                         <img
                             src="@/assets/images/a17.jpg"
@@ -157,11 +157,11 @@
                             class="rounded-circle"
                         />
                         <div>
-                            <strong>Marina Lux</strong>
-                            <small class="text-muted d-block">@marinalux</small>
+                            <strong class="inter font-15 font-medium response">Marina Lux</strong>
+                            <small class="inter font-12 font-regular d-block">@marinalux</small>
                         </div>
                     </div>
-                    <div class="text-light small">{{ feedback.response }}</div>
+                    <div class="inter font-15 font-regular small">{{ feedback.response }}</div>
                 </div>
             </div>
         </div>
@@ -315,8 +315,15 @@ const staticFeedbacks = [
         font-size: 0.95rem;
         color: #f2f2f2;
     }
-
     /* ====== Responsividade ====== */
+    @media (max-width: 992px) {
+        .column-mid{
+            flex-direction: column !important;
+        }
+        .d-flex.flex-row.align-items-center.justify-content-end.gap-2.me-3{
+            justify-content: flex-start !important;
+        }
+    }
     @media (max-width: 768px) {
     .container-mobile{
         max-width: inherit !important;
@@ -341,6 +348,69 @@ const staticFeedbacks = [
 
     .card .resposta {
         padding: 12px 14px;
+    }
+    @media (max-width: 476px) {
+        .gap-mobile{
+            gap: 0px !important;
+        }
+        .column-mid{
+            gap: 0px !important;
+        }
+        .form-label.inter.font-regular.font-15.text-berge.mb-0.mt-2.text-start{
+            font-size: 0.6875rem !important;
+        }
+        .stars svg{
+            width: 18px;
+            height: 18px;
+        }
+        .msg{
+            margin-top: 20px !important;        
+        }
+        textarea.form-control{
+            height: 160px;
+        }
+        textarea.form-control::placeholder, .form-check-label, .privacy-policy{
+            font-size: 0.75rem !important;
+        }
+        .form-check-input{
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-top: 8px;
+            margin-left: -20px;
+        }
+        .btn.send{
+            height: 30px;
+            font-size: 14px !important;
+            line-height: 11px;
+        }
+        h6.text-secondary, small.text-muted{
+            font-size: 0.75rem;
+        }
+        .d-flex.align-items-center.gap-2.mt-2 svg{
+            width: 15px;
+            height: 15px;
+        }
+        p.mt-3{
+            font-size: 0.75rem;
+            margin: 0px;
+        }
+        .response, .small{
+            font-size: 0.75rem !important;
+        }
+        .card .resposta strong{
+            margin-bottom: 0;
+        }
+        small.inter.font-12.font-regular.d-block{
+            font-size: 0.625rem;
+        }
+        .card .border-top{
+            padding-top: 0px !important;
+        }
+        .card .d-flex.align-items-center.gap-3 img{
+            width: 40px;
+            height: 40px;
+        }
     }
 }
 

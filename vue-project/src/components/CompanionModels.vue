@@ -199,5 +199,19 @@ const randomCompanions = ref([
         padding-left: 10px !important;
         padding-right: 10px !important;
     }
+    .d-flex.text-berge.gap-2.justify-content-center.align-items-center.flex-column{
+        gap: 2px !important;
+    }
+    .like-component svg{
+        width: 13px;
+    }
+    :deep(.like-font-mobile){
+        font-size: 0.625rem;
+    }
+    .d-flex.justify-content-between.align-items-end.col-11.m-auto.pt-2.pb-1{
+        padding: 2px 0 0 0 !important;
+        margin-bottom: 4px !important;
+    }
 }
+
 </style>

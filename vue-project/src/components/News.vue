@@ -147,4 +147,17 @@ const randomCompanions = ref([
     padding-right: 10px !important;
   }
 }
+@media (max-width: 476px) {
+  .swiper-nav{
+    top: -8px;
+    right: 15px;
+  }
+  .font-mobile{
+      font-size: 0.75rem;
+  }
+  .location-mobile{
+    margin-bottom: 0 !important;
+    font-size: 0.625rem !important;
+  }
+}
 </style>

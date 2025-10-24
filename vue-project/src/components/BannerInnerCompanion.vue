@@ -219,6 +219,16 @@
         }
     }
     @media (max-width: 476px) {
+        :deep(.like){
+            margin-left: 10px !important;
+        }
+        .report-profile{
+            margin-left: 8px;
+            margin-top: -4px; 
+        }
+        .d-flex.justify-content-center.align-items-center.gap-3.social-link{
+            gap: 5px !important;
+        }
         .banner-interno{
             height: 230px;
         }
@@ -228,11 +238,11 @@
         }
         .button-mobile{
             font-size: 0.625rem;
-            height: 25px;
-            padding: 0 15px !important;
+            height: 22px;
+            padding: 0 10px !important;
         }
         .button-mobile svg{
-            width: 14px;
+            width: 12px;
         }
         .companion-font-mobile{
             font-size: 1rem;
@@ -247,20 +257,26 @@
         }
         :deep(.icon-mobile){
             width: 12px;
-            padding-top: 6px;
+            padding: 0 !important;
+            margin-top: -2px;
+            margin-left: -10px;
         }
         :deep(.description.d-flex.justify-content-center.align-items-center.gap-3.me-4){
-            gap: 5px !important;
-            align-items: baseline !important;
+            gap: 0px !important;
+            align-items: start !important;
         }
         .like :deep(svg) {
-            width: 18px;
-            height: 18px;
+            width: 18px !important;
+            height: 18px !important;
+        }
+        h4.companion-font-mobile{
+            text-align: left;
         }
     }
     @media (max-width: 415px) {
         .info-profile{
             gap: 10px !important;
+            margin-top: 15px !important;
         }
         .followers span, .liked span, .publishings span{
             font-size: 0.6875rem;

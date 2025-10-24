@@ -41,7 +41,7 @@
                     </div>
                     
                     <RouterLink
-                        class="text-decoration-none text-dark fw-bold"
+                        class="text-decoration-none text-dark fw-bold d-flex"
                         :to="companion.link"
                     >
                         <svg
@@ -101,7 +101,7 @@ const randomCompanions = ref([
         transform: scale(1.05);
     }
 
-     @media (max-width: 576px) {
+    @media (max-width: 576px) {
         .icon-chat-mobile{
             width: 18px;
         }
@@ -115,6 +115,28 @@ const randomCompanions = ref([
         section.container-fluid {
             padding-left: 10px !important;
             padding-right: 10px !important;
+        }
+    }
+    @media (max-width: 476px) {
+        .d-flex.gap-2.justify-content-center.align-items-center.flex-row{
+            gap: 3px !important;
+        }
+        .image{
+            padding: 2px 2px 0 2px !important;
+        }
+        .description .d-flex.justify-content-between.align-items-center.col-11.m-auto.py-2{
+            padding: 5px 0 !important;
+        }
+        .icon-chat-mobile{
+            width: 15px;
+            height: 13px;
+            margin-right: 8px;
+        }
+        .companion-item .content-item{
+            border-radius: 20px 0 !important;
+        }
+        .companion-item .content-item .image .rounded{
+            border-radius: 20px 0 0!important;
         }
     }
 </style>

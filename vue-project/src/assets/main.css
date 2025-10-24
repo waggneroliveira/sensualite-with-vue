@@ -239,3 +239,32 @@ button.clean{
   border-radius: 100%;
 }
 /*Header*/
+@media (max-width: 476px) {
+  .font-18.inter.font-medium.text-berge.col-12.col-lg-1{
+    font-size: 0.9375rem !important;
+  }
+  .companion-item .content-item img{
+    aspect-ratio: 4/5 !important;
+  }
+  .king-views-wrapper svg{
+    height: 10px !important;
+    width: 10px !important;
+    aspect-ratio: 1 / 1;
+  }
+  .title-section{
+    font-size: 1.125rem !important;
+  }
+  .filter-select{
+        height: 28px !important;
+  }
+  .companion-font-mobile, .filter-select{
+    font-size: 0.75rem !important;
+  }
+  .d-flex.text-berge.gap-2.justify-content-center.align-items-center.flex-column{
+    align-items: flex-start !important;
+  }
+  .icon-chat-mobile {
+    margin-right: 5px;
+  }
+
+}

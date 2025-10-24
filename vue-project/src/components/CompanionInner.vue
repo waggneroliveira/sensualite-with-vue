@@ -212,7 +212,7 @@
                             <img
                             :src="profileImage"
                             alt="perfil"
-                            class="rounded-circle"
+                            class="rounded-circle image-mobile"
                             style="width: 55px; height: 55px; object-fit: cover;"
                             />
                             <div>
@@ -221,7 +221,7 @@
                             </div>
                         </div>
 
-                        <p>Vamos sair hoje?</p>
+                        <p class="inter font-15 text-berge font-regular font-mobile">Vamos sair hoje?</p>
 
                         <div class="image-feed col-12 position-relative">
                             <Swiper
@@ -266,7 +266,7 @@
                             </div>
                         </div>
 
-                        <p>Vamos sair hoje?</p>
+                        <p class="inter font-15 text-berge font-regular font-mobile">Vamos sair hoje?</p>
 
                         <div class="image-feed col-12">
                             <Swiper
@@ -663,11 +663,22 @@ img:hover {
     }
 }
 @media (max-width: 476px) {
+    .image-mobile{
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .font-mobile{
+        font-size: 0.75rem !important;
+    }
     .badge.px-3.py-2.rounded-pill{
         font-size: 0.75rem !important;
         padding: 6px 10px !important;
     }
     .mb-0.inter.font-20.text-berge.font-bold, .card-title{
+        font-size: 1rem;
+        margin-bottom: 0px !important;
+    }
+    .card-title{
         font-size: 1rem;
         margin-bottom: 15px !important;
     }
@@ -681,6 +692,13 @@ img:hover {
         font-size: 0.75rem !important;
         padding: 4px 6px !important;
         max-width: 85px !important;
+    }
+    .like :deep(span){
+        font-size: 0.75rem !important;
+    }
+    .like :deep(svg) {
+        width: 18px;
+        height: 18px;
     }
 }
 </style>
